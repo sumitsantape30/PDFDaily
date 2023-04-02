@@ -2,6 +2,63 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+  <title>Translate Text</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+        <style>
+             #container 
+             {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+    
+            #sourceText 
+            {
+                margin-right: 10px;
+            }
+    
+            #translateButton 
+            {
+                background-color: #da4343;
+                border: none;
+                color: rgb(245, 237, 237);
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 16px;
+            }
+            .translateButton:hover
+            {
+                background-color: #000000;
+            }
+            .button 
+            {
+                background-color: #da4343;
+                border: none;
+                color: rgb(245, 237, 237);
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 16px;
+            }
+            .button:hover 
+            {
+                background-color: #000000;
+            }
+            div 
+            {
+                background-color: #E9F1FA;
+            }
+       
+        </style>
+        <meta charset="UTF-8">
         <title>iLovePDF | Online PDF tools for PDF lovers</title>
         <meta name="description" content="iLovePDF is an online service to work with PDF files completely free and easy to use. Merge PDF, split PDF, compress PDF, office to PDF, PDF to JPG and more!"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -453,6 +510,7 @@
                             
                             <img src="images\icons\word to pdf.png">
                             <h3>Word to PDF</h3>
+                            <p>Make word files easy to <br>read by converting them into<br> PDF</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
@@ -461,6 +519,7 @@
                         <a href="/split_pdf" title="Split PDF">
                             <img src="images\icons\excel to pdf.png">
                             <h3>Excel to PDF</h3>
+                            <p>Make excel sheets easy to read by converting them into PDF</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
@@ -471,7 +530,7 @@
                             <img src="images\icons\powerpoint to pdf.png">
                             <h3>Powerpoint to PDF
                             </h3>
-                            <div class="tools__item__content">
+                            <p>Make your PPT slides easy <br> to view by converting them<br> into PDF</p>                            <div class="tools__item__content">
                             </div>
                         </a>
                     </div>
@@ -480,6 +539,7 @@
                             
                             <img src="images\icons\jpg to pdf.png">
                             <h3>JPG to PDF</h3>
+                            <p>Reformat a JPG, PNG, or other image to a PDF file in <br> a few seconds</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
@@ -489,14 +549,16 @@
                             
                             <img src="images\icons\openoffice to pdf.png">
                             <h3>OpenOffice to PDF</h3>
+                            <p>Convert OpenOffice Writer, Calc, Impress, Draw and Math files to PDF online <br> and free</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
                     </div>
                     <div class="tools__item">
                         <a href="/pdf_to_excel" title="PDF to Excel">
-                            <img src="">
+                            <img src="images\icons\ebooks to pdf.png">
                             <h3>eBooks to PDF</h3>
+                            <p>Convert various eBooks <br> files like MOBI and <br> EPUB to PDF</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
@@ -505,6 +567,7 @@
                         <a href="/word_to_pdf" title="Word to PDF">
                             <img src="images\icons\iwork to pdf.png">
                             <h3>iWork to PDF</h3>
+                            <p>Turn your iWork Pages, Numbers, or Keynote document into a PDF in seconds</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
@@ -515,6 +578,8 @@
                             
                             <img src="images\icons\excel to pdf.png">
                             <h3>PDF to Excel</h3>
+                            <p>Extract the data from <br> PDFs directly into excel sheets</p>
+                            
                             <div class="tools__item__content">
                             </div>
                         </a>
@@ -524,6 +589,7 @@
                             
                             <img src="images\icons\pdf to powerpoint.png">
                             <h3>PDF to Powerpoint</h3>
+                            <p>Make PPTs from PDFs in <br> the easiest way</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
@@ -532,6 +598,7 @@
                         <a href="/pdf_to_jpg" title="PDF to JPG">
                             <img src="images\icons\pdf to jpg.png">
                             <h3>PDF to JPG</h3>
+                            <p>Convert PDF images <br> directly into jpg format</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
@@ -540,6 +607,7 @@
                         <a href="/jpg_to_pdf" title="JPG to PDF">
                             <img src="images\icons\pdf to png.png">
                             <h3>PDF to PNG</h3>
+                            <p>Convert PDF images <br>directly into png format</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
@@ -548,6 +616,7 @@
                         <a href="/sign-pdf" title="Sign PDF">
                             <img src="images\icons\merge pdf.png">
                             <h3>Merge PDF</h3>
+                            <p>Merge multiple PDFs into <br> a single PDF</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
@@ -556,13 +625,61 @@
                         <a href="/pdf_add_watermark" title="Watermark">
                             <img src="images\icons\pdf to pdfa.png">
                             <h3>PDF to PDF/A</h3>
+                            <p>Convert PDFs into PDF/A, ISO standardized version <br> for archiving</p>
                             <div class="tools__item__content">
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-               
+    <div>
+        <br>
+        <center><font size="+1"><p>Easily convert to and from PDFs in seconds</font></p></center>
+        <center><button class="button">+ Choose file</button><center>
+    </div>
+
+    <div>
+        <br><br>
+        <strong><center><font size="+2"><p>How to convert to and from  PDF free</font></p></center></strong>
+        <center><img src="images\icons\steps.png"></center>
+    </div>               
+    <div>
+        <br>
+        <center><h1 class="title" style="background-color:rgb(255, 255, 255)">TRANSLATION</h1></center>
+        <br>
+        <div id="container">
+            <textarea id="sourceText" rows="10" cols="40"></textarea>
+            <button id="translateButton">Translate</button>
+            <textarea id="targetText" rows="10" cols="40" readonly></textarea>
+          </div>
+          
+          <script>
+            $(document).ready(function() {
+              $('#translateButton').click(function() {
+                var sourceText = $('#sourceText').val();
+                var targetLang = 'en'; // Change to the target language code you want to translate to
+                var apiKey = 'YOUR_API_KEY'; // Replace with your Google Translate API key
+                
+                $.ajax({
+                  url: 'https://translation.googleapis.com/language/translate/v2',
+                  type: 'POST',
+                  data: {
+                    'q': sourceText,
+                    'target': targetLang,
+                    'key': apiKey
+                  },
+                  success: function(response) {
+                    var targetText = response.data.translations[0].translatedText;
+                    $('#targetText').val(targetText);
+                  }
+                });
+              });
+            });
+          </script>
+       
+        
+    </div>
+    
 <div id="network " class="network ">
     <i class="ico ico--network "></i>
     <div class="network__text ">
@@ -572,7 +689,7 @@
 <script>
         var lang = 'en-US';
     var brand = 'iLovePDF';
-    var brand_ref = 'ilovepdf';
+        var brand_ref = 'ilovepdf';
             var nds = {
         'ck': 0,
         'content': '<p>We hope you like it and find it easier to use.<br>If you run into any issues, please <a href=\"/contact\">let us know</a>.<br>We can fix any problem if we know about it.</p>',
