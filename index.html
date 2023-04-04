@@ -2,6 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    
   <title>Translate Text</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    
@@ -637,7 +644,7 @@
         <center><font size="+1"><p>Easily convert to and from PDFs in seconds</font></p></center>
         <center><button class="button">+ Choose file</button><center>
     </div>
-
+<!-- 
     <div>
         <br><br>
         <strong><center><font size="+2"><p>How to convert to and from  PDF free</font></p></center></strong>
@@ -651,9 +658,75 @@
             <textarea id="sourceText" rows="10" cols="40"></textarea>
             <button id="translateButton">Translate</button>
             <textarea id="targetText" rows="10" cols="40" readonly></textarea>
-          </div>
+          </div> -->
+          <!-- footer -->
+          <br>
+          <br>
+          <div class="outer-container">
+            <div class="container-fluid">
+                <div class="heading text-center">
+                    <h1>How to convert to and from PDF free</h1>
+                </div>
+                <div class="boxes">
+                    <div class="box box1">
+                        <div class="number-div">
+                            <div class="number-circle ps-2">1</div>
+                        </div>
+                        <div class="para-div ms-3 pt-2">
+                            Select the Word, Excel, PowerPoint, PDF or other file you wish to convert.
+                        </div>
+                    </div>
+                    <div class="box box2">
+                        <div class="number-div">
+                            <div class="number-circle ps-2">2</div>
+                        </div>
+                        <div class="para-div ms-3 pt-2">
+                            Our free PDF creator will convert your document to PDF or from PDF in seconds.
+                        </div>
+                    </div>
+                    <div class="box box3">
+                        <div class="number-div">
+                            <div class="number-circle ps-2">3</div>
+                        </div>
+                        <div class="para-div ms-3">
+                            Your new document will be ready to download immediately. After the download is completed, any
+                            remaning files uploaded will be purged from our server.
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class="heading2 bg-white text-center pt-3 pb-2">
+                    <h1>TRANSLATION</h1>
+                </div>
+                <div class="translate-outer-div mt-4">
+                    <div  class="translate-div">
+                        <div class="translate english-div">
+                            <div>
+                                <textarea class="textarea" name="" placeholder="Type something in English." id="" cols="35" rows="12"></textarea>
+                            </div>
+                        </div>
+                        <div  class="translate btn-div">
+                            <div>
+                                <button class="translate-btn">Translate</button>
+                            </div>
+                        </div>
+                        <div  class="translate hindi-div">
+                            <div>
+                                <textarea class="textarea" name="" placeholder="Get hindi translation." id="" cols="35" rows="12"></textarea>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
           
-          <script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+          crossorigin="anonymous">
             $(document).ready(function() {
               $('#translateButton').click(function() {
                 var sourceText = $('#sourceText').val();
