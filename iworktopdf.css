@@ -1,0 +1,63 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#body1{
+    background: linear-gradient(to left, #08EBEB, #1259AB);
+    width: 1350px;
+    height: 80px;
+}
+#body2{
+    background-color: #E9F1FA;
+    width: 1350px;
+    height: 700px;
+}
+#logo{
+    width: 160px;
+    height: 90px;
+    margin-top: 0px;
+}
+.top{
+    position:relative;
+    float: right;
+    margin-top: 1px;
+    margin-bottom: 1px;;
+    padding: 20px;
+}
+#profilepic{
+    width:50px;
+    height:50px;
+    float: right;
+    position:relative;
+    margin-top: 0px;
+}
+
+.profilepic {
+    transition: transform 0.3s ease-in-out;
+  }
+.profilepic:hover {
+    transform: scale(1.1);
+  }
+
+#iworktopdf{
+    width:140px;
+    height:110px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+  }
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color:#E92927;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
