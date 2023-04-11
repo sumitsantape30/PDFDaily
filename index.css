@@ -9,6 +9,51 @@
     background: linear-gradient(to left, #08EBEB, #1259AB);
   }
 
+  /* navabar css */
+
+#body1{
+    background: linear-gradient(to left, #08EBEB, #1259AB);
+    width: 1350px;
+    height: 80px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#logo{
+    width: 160px;
+    height: 90px;
+    margin-top: 0px;
+}
+.top{
+    position:relative;
+    float: right;
+    margin-top: 1px;
+    margin-bottom: 1px;;
+    padding: 20px;
+}
+
+#profilepic{
+    width:50px;
+    height:50px;
+    float: right;
+    position:relative;
+    margin-top: 0px;
+}
+
+div.top{
+    background-color: transparent;
+}
+
+.profilepic {
+    transition: transform 0.3s ease-in-out;
+  }
+.profilepic:hover {
+    transform: scale(1.1);
+  }
+
+
+  /* navbar end */
+
 .tippy-box {
     position: relative;
     background-color: #333;

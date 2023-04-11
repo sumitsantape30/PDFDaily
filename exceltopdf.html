@@ -36,7 +36,8 @@
             <br>
             <img src="images\icons\excel to pdf.png" id="exceltopdf" class="center"> 
             <h1 style="font-family: Helvetica, Sans-serif;" class="center">Convert your excel file to PDF in seconds</h1>
-            <center><button class="button">+  Select any excel file</button></center>
+            <input type="file" id="excel-file" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="display:none;">           
+            <center><button class="button" onclick="document.getElementById('excel-file').click();">+  Select any ebook file</button></center>
             <h2 style="font-family: Helvetica, Sans-serif;" class="center"> Or drop your excel file here</h2>
         </div>
     </body>

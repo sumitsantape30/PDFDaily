@@ -36,7 +36,8 @@
             <br>
             <img src="images\icons\pdf to jpg.png" id="pdftojpg" class="center"> 
             <h1 style="font-family: Helvetica, Sans-serif;" class="center">Convert your PDF file to jpg in seconds</h1>
-            <center><button class="button">+  Select a PDF file</button></center>
+            <input type="file" id="pdf-file" accept="application/pdf" style="display:none;">                         
+            <center><button class="button" onclick="document.getElementById('pdf-file').click();">+  Select a PDF file</button></center>
             <h2 style="font-family: Helvetica, Sans-serif;" class="center"> Or drop your PDF file here</h2>
         </div>
     </body>

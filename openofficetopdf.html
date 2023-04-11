@@ -36,7 +36,8 @@
             <br>
             <img src="images\icons\openoffice to pdf.png" id="openofficetopdf" class="center"> 
             <h1 style="font-family: Helvetica, Sans-serif;" class="center">Convert your open office file to PDF in seconds</h1>
-            <center><button class="button">+  Select any open office file</button></center>
+            <input type="file" id="openOffice-file" accept="application/vnd.oasis.opendocument.*" style="display:none;">                 
+            <center><button class="button" onclick="document.getElementById('openOffice-file').click();">+  Select any open office file</button></center>
             <h2 style="font-family: Helvetica, Sans-serif;" class="center"> Or drop your open office file here</h2>
         </div>
     </body>

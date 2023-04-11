@@ -36,7 +36,9 @@
             <br>
             <img src="images\icons\iwork to pdf.png" id="iworktopdf" class="center"> 
             <h1 style="font-family: Helvetica, Sans-serif;" class="center">Convert your iWork file to PDF in seconds</h1>
-            <center><button class="button">+  Select any iwork file</button></center>
+            <input type="file" id="iwork-file" accept="application/vnd.apple.pages, application/vnd.apple.numbers, application/vnd.apple.key" style="display:none;">           
+            <center><button class="button" onclick="document.getElementById('iwork-file').click();">+  Select any iWork file</button></center>
+      
             <h2 style="font-family: Helvetica, Sans-serif;" class="center"> Or drop your iWork file here</h2>
         </div>
     </body>

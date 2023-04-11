@@ -36,7 +36,9 @@
             <br>
             <img src="images\icons\powerpoint to pdf.png" id="powerpointtopdf" class="center"> 
             <h1 style="font-family: Helvetica, Sans-serif;" class="center">Convert your power point file to PDF in seconds</h1>
-            <center><button class="button">+  Select a power point file</button></center>
+            <input type="file" id="ppt-file" accept="application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.presentationml.presentation" style="display:none;">                         
+            <center><button class="button" onclick="document.getElementById('ppt-file').click();">+  Select a power point file</button></center>
+           
             <h2 style="font-family: Helvetica, Sans-serif;" class="center"> Or drop your power point file here</h2>
         </div>
     </body>
