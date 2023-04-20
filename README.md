@@ -22,14 +22,4 @@ To convert a PDF file to PDF/A format, simply upload the file to PDFDaily and se
 
 PDFDaily also includes an OCR feature, which allows you to extract text from images. To use OCR, simply upload the image file to PDFDaily and click on the "OCR" button.
 
-## Contributing 🤝
 
-PDFDaily is an open-source project, and we welcome contributions from developers of all skill levels. If you're interested in contributing to PDFDaily, please check out our GitHub repository and follow the instructions for contributing.
-
-## License 📜
-
-PDFDaily is licensed under the MIT License. Please see the LICENSE file for more information.
-
-## Contact 📧
-
-If you have any questions or comments about PDFDaily, please contact us at support@pdfdaily.com.
