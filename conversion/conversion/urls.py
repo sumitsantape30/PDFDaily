@@ -14,12 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from .import views 
 from .views import convert_word_to_pdf
 
+
 urlpatterns = [
-   
-    path('convert-word-to-pdf/', convert_word_to_pdf),
-    path('convert-excel-to-pdf/', convert_excel_to_pdf, name='convert-excel-to-pdf'),
+    path('convert_word_to_pdf/', convert_word_to_pdf),
+     path('api-auth/', include('rest_framework.urls')),
+    path('Exeltopdf/',include('Exeltopdf.urls')),
+    path('pngtojpg/', include('pngtojpg.urls')),
+    path('jpgtopdf/', include('jpgtopdf.urls')),
 ]
