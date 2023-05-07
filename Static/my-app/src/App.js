@@ -11,12 +11,13 @@ import Pdftojpg from './pages/pdftojpg';
 import Pdftopng from './pages/pdftopng';
 import Mergepdf from './pages/mergepdf';
 import Pdftopdfa from './pages/pdftopdfa';
+import Index from './pages/index';
 
 function App() {
   return (
     <div>
       
-      <Pdftopdfa/>    
+      <Index/>    
         
     </div>
   );
