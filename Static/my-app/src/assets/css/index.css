@@ -13471,7 +13471,10 @@ i.fa.fa-smile-o {
     }
 }
 
-
+.dialog__header--dark {
+    background: url(/img/premium/header.svg) no-repeat 50%;
+    background-size: cover
+}
 
 [data-state=AuthState] .btn,[data-state=CannotTrialState] .btn {
     border-radius: 8px;
