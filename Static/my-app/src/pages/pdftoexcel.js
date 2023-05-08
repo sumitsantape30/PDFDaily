@@ -2,7 +2,7 @@ import React from "react";
 import "../assets/css/pdftoexcel.css";
 
 
-function pdftoexcell() {
+function pdftoexcel() {
   return (
     <div>
       <div id="body1">
