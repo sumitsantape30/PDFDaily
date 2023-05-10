@@ -10087,7 +10087,7 @@ button.mat-icon-button:disabled {
     margin: 0 auto;
     -ms-flex: 0 0 100%;
     flex: 0 0 100%
-    background: linear-gradient(90deg,#ffffff,#6d869a 50%,#231641) #44287d;
+    background linear-gradient(90deg,#ffffff,#6d869a 50%,#231641) #44287d;
 }
 
 .header .brand,.header .social,.header .top-menu {

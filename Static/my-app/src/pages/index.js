@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import "../assets/css/index.css";
+//import "..assets/css/index.module.css";
+import styles from '../assets/css/index.module.css';
+
 
 
 function index() {
