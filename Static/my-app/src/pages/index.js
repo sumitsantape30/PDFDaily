@@ -19,7 +19,9 @@ function index() {
                 </div>
 
                 <div className="top">
+                    <Link to={"LanguageTranslation"}>
                     <p className="mainhead" style={{ fontFamily: 'monospace' }}>TRANSLATION</p>
+                    </Link>
                 </div>
 
                 <div className="top">

@@ -1,8 +1,17 @@
-{% extends "MyAPI/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Language Translation</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	{% extends "MyAPI/base.html" %}
 
-{% load static %}
+	{% load static %}
 
-{% block content %}
+	{% block content %}
 
 	<div id="navstrip">
 		<div class="navbox">
@@ -60,18 +69,25 @@
 							<option value="te">Telugu</option>
 					    </select>
 					</div>
-					<div class="col-xl-2 col-lg-2 butn"><button type="submit" class="btn btn-dark">Translate</button></div>
-				</div>
-			</form><br>
-			{% if messages %}
-				<center><div class="alert alert-light" style="max-width: 500px;">
-					{% for message in messages %}
-						<p align="center">{{ message }}</p>
-					{% endfor %}
-				</div></center>
-			{% endif %}
-		</div>
-		<div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
-	</div>
-
-{% endblock %}
+                    <div class="col-xl-2 col-lg-2 butn">
+                        <button type="submit" class="btn btn-dark">Translate</button>
+                    </div>
+                    
+                    </div>
+                </form><br>
+                {% if messages %}
+                    <center><div class="alert alert-light" style="max-width: 500px;">
+                        {% for message in messages %}
+                            <p align="center">{{ message }}</p>
+                        {% endfor %}
+                    </div></center>
+                {% endif %}
+            </div>
+            <div class="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
+        </div>
+    
+    </div> <!-- Closing tag for container -->
+    
+    </body>
+    </html>
+    
