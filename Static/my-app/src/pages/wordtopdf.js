@@ -54,8 +54,9 @@ function wordtopdf() {
         />
         <br></br>
         <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
-          Convert your word file to PDF in seconds
+          <b>Convert your word file to PDF in seconds </b>
         </h1> 
+        <br></br>
         <input
           type="file"
           id="ppt-file"
@@ -73,7 +74,7 @@ function wordtopdf() {
           
         </center>
         <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
-          Or drop your word file here
+          <b>Or drop your word file here</b>
         </h2>
         <br></br>
         <center>

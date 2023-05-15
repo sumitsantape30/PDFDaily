@@ -45,8 +45,9 @@ function powerpointtopdf() {
           <br />
           <img src="assets/images/icons/powerpoint to pdf.png" id="powerpointtopdf" className="center" />
           <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
-            Convert your power point file to PDF in seconds
+            <b>Convert your power point file to PDF in seconds</b>
           </h1>
+          <br></br>
           <input
             type="file"
             id="ppt-file"
@@ -60,7 +61,7 @@ function powerpointtopdf() {
           </center>
 
           <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
-            Or drop your power point file here
+            <b>Or drop your power point file here</b>
           </h2>
           <br></br>
 
