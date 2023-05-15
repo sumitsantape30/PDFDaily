@@ -2,7 +2,11 @@ import React from 'react';
 import '../assets/css/ebookstopdf.css';
 
 class ebookstopdf extends React.Component {
+  
   render() {
+    const handleDownload = () => {
+      // TODO: Handle file download logic
+    };
     return (
       <div>
       <div id="body1">
@@ -65,6 +69,13 @@ class ebookstopdf extends React.Component {
         <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
           Or drop your ebook file here
         </h2>
+        <br></br>
+
+        <center>
+          <button className="button" onClick={handleDownload}>
+            Download PDF
+          </button>
+        </center>
       </div>
       </div>
     );

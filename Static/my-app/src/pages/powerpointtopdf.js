@@ -3,6 +3,11 @@ import "../assets/css/powerpointtopdf.css";
 
 
 function powerpointtopdf() {
+
+  const handleDownload = () => {
+    // TODO: Handle file download logic
+  };
+
   return (
     <html lang="en">
       <head>
@@ -57,6 +62,13 @@ function powerpointtopdf() {
           <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
             Or drop your power point file here
           </h2>
+          <br></br>
+
+          <center>
+          <button className="button" onClick={handleDownload}>
+            Download PDF
+          </button>
+        </center>
         </div>
       </body>
     </html>

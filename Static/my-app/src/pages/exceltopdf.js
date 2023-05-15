@@ -2,6 +2,9 @@ import React from "react";
 import "../assets/css/exceltopdf.css";
 
 function exceltopdf() {
+  const handleDownload = () => {
+    // TODO: Handle file download logic
+  };
   return (
     <div id="body1">
       <img src="assets/images/icons/mainlogo.png" id="logo" />
@@ -53,6 +56,13 @@ function exceltopdf() {
         <h2 style={{ fontFamily: "Helvetica, Sans-serif" }} className="center">
           Or drop your excel file here
         </h2>
+        <br></br>
+
+        <center>
+          <button className="button" onClick={handleDownload}>
+            Download PDF
+          </button>
+        </center>
       </div>
     </div>
   );

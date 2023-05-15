@@ -6,6 +6,10 @@ function wordtopdf() {
     // TODO: Handle file upload logic
   };
 
+  const handleDownload = () => {
+    // TODO: Handle file download logic
+  };
+
   return (
     <div>
       <div id="body1">
@@ -48,9 +52,10 @@ function wordtopdf() {
           id="wordtopdf"
           className="center"
         />
+        <br></br>
         <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
           Convert your word file to PDF in seconds
-        </h1>
+        </h1> 
         <input
           type="file"
           id="ppt-file"
@@ -65,10 +70,17 @@ function wordtopdf() {
           >
             + Select a word file
           </button>
+          
         </center>
         <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
           Or drop your word file here
         </h2>
+        <br></br>
+        <center>
+          <button className="button" onClick={handleDownload}>
+            Download PDF
+          </button>
+        </center>
       </div>
     </div>
   );

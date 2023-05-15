@@ -3,6 +3,9 @@ import "../assets/css/pdftopng.css";
 
 
 function pdftopng() {
+  const handleDownload = () => {
+    // TODO: Handle file download logic
+  };
   return (
     <div>
       <div id="body1">
@@ -32,6 +35,13 @@ function pdftopng() {
         <input type="file" id="pdf-file" accept="application/pdf" style={{ display: 'none' }} />
         <center><button className="button" onClick={() => document.getElementById('pdf-file').click()}>+ Select a PDF file</button></center>
         <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">Or drop your PDF file here</h2>
+        <br></br>
+
+        <center>
+          <button className="button" onClick={handleDownload}>
+            Download PDF
+          </button>
+        </center>
       </div>
     </div>
   );

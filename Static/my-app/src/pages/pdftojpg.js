@@ -3,6 +3,9 @@ import "../assets/css/pdftojpg.css";
 
 
 function pdftojpg() {
+  const handleDownload = () => {
+    // TODO: Handle file download logic
+  };
   return (
     <div>
       <div id="body1">
@@ -41,6 +44,13 @@ function pdftojpg() {
           </button>
         </center>
         <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">Or drop your PDF file here</h2>
+        <br></br>
+
+        <center>
+          <button className="button" onClick={handleDownload}>
+            Download PDF
+          </button>
+        </center>
       </div>
     </div>
   );

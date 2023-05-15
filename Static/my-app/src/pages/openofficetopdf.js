@@ -3,6 +3,9 @@ import "../assets/css/openofficetopdf.css";
 
 
 function openofficetopdf() {
+  const handleDownload = () => {
+    // TODO: Handle file download logic
+  };
   return (
     <div>
       <div id="body1">
@@ -39,6 +42,13 @@ function openofficetopdf() {
           <button className="button" onClick={() => document.getElementById('openOffice-file').click()}>+  Select any open office file</button>
         </center>
         <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center"> Or drop your open office file here</h2>
+        <br></br>
+
+        <center>
+          <button className="button" onClick={handleDownload}>
+            Download PDF
+          </button>
+        </center>
       </div>
     </div>
   );

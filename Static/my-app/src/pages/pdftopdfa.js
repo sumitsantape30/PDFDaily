@@ -1,6 +1,9 @@
 import React from "react";
 import "../assets/css/pdftopdfa.css";
 function pdftopdfa() {
+  const handleDownload = () => {
+    // TODO: Handle file download logic
+  };
   return (
     <html lang="en">
       <head>
@@ -58,6 +61,13 @@ function pdftopdfa() {
           <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
             Or drop your PDF file here
           </h2>
+          <br></br>
+
+          <center>
+          <button className="button" onClick={handleDownload}>
+            Download PDF
+          </button>
+        </center>
         </div>
       </body>
     </html>

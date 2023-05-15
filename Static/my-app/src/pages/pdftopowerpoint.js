@@ -4,6 +4,10 @@ import '../assets/css/pdftopowerpoint.css';
 
 function pdftopowerpoint() 
 {
+
+  const handleDownload = () => {
+    // TODO: Handle file download logic
+  };
 return (
 <html lang="en">
 <head>
@@ -80,6 +84,13 @@ Copy code
         {" "}
         Or drop your PDF file here
       </h2>
+      <br></br>
+
+      <center>
+          <button className="button" onClick={handleDownload}>
+            Download PDF
+          </button>
+        </center>
     </div>
   </body>
 </html>

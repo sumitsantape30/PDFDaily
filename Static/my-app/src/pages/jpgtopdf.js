@@ -3,6 +3,9 @@ import "../assets/css/jpgtopdf.css";
 
 
 function jpgtopdf() {
+  const handleDownload = () => {
+    // TODO: Handle file download logic
+  };
   return (
     <div>
       <div id="body1">
@@ -37,6 +40,13 @@ function jpgtopdf() {
         <input type="file" id="jpeg-file" accept="image/jpeg" style={{ display: 'none' }} />
         <center><button className="button" onClick={() => document.getElementById('jpeg-file').click()}>+  Select a jpg file</button></center>
         <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center"> Or drop your jpg file here</h2>
+        <br></br>
+
+        <center>
+          <button className="button" onClick={handleDownload}>
+            Download PDF
+          </button>
+        </center>
       </div>
     </div>
   );
