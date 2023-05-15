@@ -42,15 +42,16 @@ function LanguageTranslation() {
                     <div className="option">
                         <a href="/about">
                             <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
-                            <span>About</span>
+                            <span></span>
                         </a>
                     </div>
                 </div>
             </div>
+            <br></br>
             <div className="row">
                 <div className="col-md-1 col-lg-3 col-xl-3 col-sm-1 col-1"></div>
                 <div className="col-md-10 col-lg-6 col-xl-6 col-sm-10 col-10">
-                    <h1>Language Translation</h1>
+                    <h1><b>Language Translation</b></h1>
                     <br /><br />
                     <form method="POST">
                         <div className="form-group">

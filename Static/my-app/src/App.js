@@ -17,7 +17,6 @@ import LanguageTranslation from './pages/LanguageTranslation';
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link, BrowserRouter, Routes } from "react-router-dom";
 
-
 function App() {
   return (
     <BrowserRouter>
