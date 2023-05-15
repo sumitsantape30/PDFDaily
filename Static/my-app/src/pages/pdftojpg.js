@@ -48,7 +48,7 @@ function pdftojpg() {
 
         <center>
           <button className="button" onClick={handleDownload}>
-            Download PDF
+            Download JPG
           </button>
         </center>
       </div>

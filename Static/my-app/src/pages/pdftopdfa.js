@@ -65,7 +65,7 @@ function pdftopdfa() {
 
           <center>
           <button className="button" onClick={handleDownload}>
-            Download PDF
+            Download PDFA
           </button>
         </center>
         </div>

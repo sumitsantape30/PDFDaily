@@ -39,7 +39,7 @@ function pdftopng() {
 
         <center>
           <button className="button" onClick={handleDownload}>
-            Download PDF
+            Download PNG
           </button>
         </center>
       </div>

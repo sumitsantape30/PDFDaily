@@ -39,7 +39,7 @@ function pdftoexcel() {
 
         <center>
           <button className="button" onClick={handleDownload}>
-            Download PDF
+            Download EXCEL
           </button>
         </center>
       </div>

@@ -88,7 +88,7 @@ Copy code
 
       <center>
           <button className="button" onClick={handleDownload}>
-            Download PDF
+            Download PPT
           </button>
         </center>
     </div>
