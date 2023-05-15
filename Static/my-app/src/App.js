@@ -18,7 +18,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link, BrowserRouter, Routes } from "react-router-dom";
 
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -36,7 +35,7 @@ function App() {
         <Route path= "Pdftopdfa" element = {<Pdftopdfa />} />
         <Route path= "Pdftopng" element = {<Pdftopng />} />
         <Route path= "Pdftopowerpoint" element = {<Pdftopowerpoint />} />
-        <Route path= "LanguageTranslation" element = {<LanguageTranslation />} />
+        <Route path= "LanguageTranslation" element = {<LanguageTranslation />} /> 
 
       </Routes>
     </BrowserRouter>
