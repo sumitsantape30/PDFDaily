@@ -302,25 +302,26 @@ function PdfToWord() {
                     </p>
                   </div>
                  </div>
-      <h1>PDF to Word Converter</h1>
+      {/* <h1>PDF to Word Converter</h1> */}
       <div id="body2">
                    <br />
                   <br />
                   <br />
-                   <img src="assets/images/icons/pdf to pdfa.png" id="pdftopdfa" className="center" />
+                   <img src="assets/images/icons/pdf to word.png" id="pdftopdfa" className="center" />
                    <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
-                    Convert your PDF file to Word in seconds
+                    <br></br>
+                   <b> Convert your PDF file to word file in seconds </b> 
                    </h1>
-                   <form>
+                   <br></br>
+                   <form >
                    {/* <input type="file" id="pdf-file" onChange={handleFileChange} accept="application/pdf" style={{ display: 'none' }} /> */}
-                   <centre><input type="file" className="button" onChange={handleFileChange} accept="application/pdf"/></centre>
+                   <centre><input type="file" className="button" onChange={handleFileChange} accept="application/pdf" style={{ display: 'block', margin: '0 auto' }}/></centre>
                   {/* <center><button className="button" type="submit">+ Select a PDF file</button></center> */}
                  <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
-                     Or drop your PDF file here
+                     <b>Or drop your word file here</b>
                    </h2>
                    </form>
                    <br></br>
-        
                   
                   {convertedData ? (
                     <center>

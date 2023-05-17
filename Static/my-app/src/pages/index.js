@@ -165,10 +165,10 @@ function index() {
                             </a>
                         </div>
                         <div className="tools__item">
-                            <a href="pdftopdfa.html" title="pdf_to_pdfa">
-                            <Link to={"pdftopdfa"}>  <img src="assets/images/icons/pdf to pdfa.png" alt="pdf to pdfa" />
-                                <h3>PDF to PDF/A</h3>
-                                <p>Convert PDFs into PDF/A, ISO standardized version <br /> for archiving</p>
+                            <a href="Pdftoword.html" title="pdf_to_pdfa">
+                            <Link to={"Pdftoword"}>  <img src="assets/images/icons/pdf to word.png" alt="pdf to word" />
+                                <h3>PDF to word</h3>
+                                <p>Convert PDF files into word <br /> </p>
                                 </Link>
 
                                 <div className="tools__item__content"></div>

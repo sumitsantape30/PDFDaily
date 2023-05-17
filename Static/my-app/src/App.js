@@ -10,7 +10,7 @@ import Pdftoexcel from './pages/pdftoexcel';
 import Pdftojpg from './pages/pdftojpg';
 import Pdftopng from './pages/pdftopng';
 import Mergepdf from './pages/mergepdf';
-import Pdftopdfa from './pages/pdftopdfa';
+import Pdftoword from './pages/pdftoword';
 import Index from './pages/index';
 import LanguageTranslation from './pages/LanguageTranslation';
 
@@ -31,7 +31,7 @@ function App() {
         <Route path= "Openofficetopdf" element = {<Openofficetopdf />} />
         <Route path= "Pdftoexcel" element = {<Pdftoexcel />} />
         <Route path= "Pdftojpg" element = {<Pdftojpg />} />
-        <Route path= "Pdftopdfa" element = {<Pdftopdfa />} />
+        <Route path= "Pdftoword" element = {<Pdftoword />} />
         <Route path= "Pdftopng" element = {<Pdftopng />} />
         <Route path= "Pdftopowerpoint" element = {<Pdftopowerpoint />} />
         <Route path= "LanguageTranslation" element = {<LanguageTranslation />} /> 
