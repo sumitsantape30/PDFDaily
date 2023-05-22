@@ -86,6 +86,7 @@ body, html{
     flex-direction: column;
     height: 100%;
     background-color: #ebebf0;
+    display: none;
 }
 
 .container-fluid{
@@ -1192,8 +1193,7 @@ html {
     padding-right: 16px;
     padding-left: 16px;
     margin-right: auto;
-    margin-left: auto;
-    display: none;
+    margin-left: auto
 }
 
 .row {
