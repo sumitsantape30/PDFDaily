@@ -13,7 +13,7 @@
 
 #body1{
     background: linear-gradient(to left, #08EBEB, #1259AB);
-    width: 1350px;
+    width: 1226px;
     height: 80px;
     margin: 0px;
     padding: 0px;
@@ -77,6 +77,8 @@ div.top{
 
 body, html{
     height: 100vh;
+    overflow-x: hidden;
+
 }
 
 .outer-container{
