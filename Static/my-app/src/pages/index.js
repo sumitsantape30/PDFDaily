@@ -59,8 +59,8 @@ function index() {
                         </div>
 
                         <div className="tools__item">
-                            <a href="powerpointtopdf.html" title="powerpoint_to_pdf">
-                               <Link to={"powerpointtopdf"}> <img src="assets/images/icons/powerpoint to pdf.png" alt="PowerPoint to PDF" />
+                            <a href="powerpointtoword.html" title="powerpoint_to_word">
+                               <Link to={"powerpointtoword"}> <img src="assets/images/icons/powerpoint to pdf.png" alt="PowerPoint to PDF" />
                                 <h3>Powerpoint to PDF</h3>
                                 {/* <p>Make your PPT slides easy to view by converting them into PDF</p> */}
                                 </Link>
@@ -135,9 +135,9 @@ function index() {
                             </a>
                         </div>
                         <div className="tools__item">
-                            <a href="pdftojpg.html" title="pdf_to_jpg">
-                            <Link to={"pdftojpg"}> <img src="assets/images/icons/pdf to jpg.png" />
-                                <h3>PDF to JPG</h3>
+                            <a href="pngtojpg.html" title="PNG_to_JPG">
+                            <Link to={"pngtojpg"}> <img src="assets/images/icons/pdf to jpg.png" />
+                                <h3>PNG to JPG</h3>
                                 {/* <p>Convert PDF images <br /> directly into jpg format</p> */}
                                 </Link>
 
