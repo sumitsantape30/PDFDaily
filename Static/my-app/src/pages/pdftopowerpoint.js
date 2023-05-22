@@ -77,6 +77,7 @@ Copy code
         >
           + Select a PDF file </button>
       </center>
+
       <h2
         style={{ fontFamily: "Helvetica, Sans-serif" }}
         className="center"
@@ -84,6 +85,9 @@ Copy code
         {" "}
         Or drop your PDF file here
       </h2>
+
+      
+
       <br></br>
 
       <center>

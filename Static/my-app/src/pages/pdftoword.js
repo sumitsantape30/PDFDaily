@@ -254,11 +254,17 @@ function PdfToWord() {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const formData = new FormData();
-      formData.append('file', file);
-      setIsFileSelected(true);
-      setSelectedFileName(file.name);
-      convertToWord(formData);
+      const extension = file.name.split('.').pop();
+      if (extension.toLowerCase() === 'pdf') {
+        const formData = new FormData();
+        formData.append('file', file);
+        setIsFileSelected(true);
+        setSelectedFileName(file.name);
+        convertToWord(formData);
+      } else {
+        event.target.value = null; // Reset file input
+        alert('Please select a PDF file.');
+      }
     } else {
       setIsFileSelected(false);
       setSelectedFileName('');
@@ -292,13 +298,12 @@ function PdfToWord() {
   };
 
   
-
   return (
 
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
-        <title>pdf_to_pdfa</title>
+        <title>pdf to word</title>
         <link rel="stylesheet" href="pdftopdfa.css" />
       </head>
 
