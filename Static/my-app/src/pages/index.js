@@ -42,7 +42,7 @@ function index() {
                             <a href="wordtopdf.html" title="word_to_pdf">
                               <Link to={"wordtopdf"}> <img src="assets/images/icons/word to pdf.png" alt="Word to PDF" />
                                 <h3>Word to PDF</h3>
-                                <p>Make word files easy to read by converting them into PDF</p> 
+                                {/* <p>Make word files easy to read by converting them into PDF</p>  */}
                               </Link>
                                 <div className="tools__item__content"></div>
                             </a>
@@ -52,7 +52,7 @@ function index() {
                             <a href="exceltopdf.html" title="excel_to_pdf">
                               <Link to={"exceltopdf"}>  <img src="assets/images/icons/excel to pdf.png" alt="Excel to PDF" />
                                 <h3>Excel to PDF</h3>
-                                <p>Make excel sheets easy to read by converting them into PDF</p>
+                                {/* <p>Make excel sheets easy to read by converting them into PDF</p> */}
                               </Link>
                                 <div className="tools__item__content"></div>
                             </a>
@@ -62,7 +62,7 @@ function index() {
                             <a href="powerpointtopdf.html" title="powerpoint_to_pdf">
                                <Link to={"powerpointtopdf"}> <img src="assets/images/icons/powerpoint to pdf.png" alt="PowerPoint to PDF" />
                                 <h3>Powerpoint to PDF</h3>
-                                <p>Make your PPT slides easy to view by converting them into PDF</p>
+                                {/* <p>Make your PPT slides easy to view by converting them into PDF</p> */}
                                 </Link>
                                 <div className="tools__item__content"></div>
                             </a>
@@ -72,7 +72,7 @@ function index() {
                             <a href="jpgtopdf.html" title="jpg_to_pdf">
                                 <Link to={"jpgtopdf"}><img src="assets/images/icons/jpg to pdf.png" alt="JPG to PDF" />
                                 <h3>JPG to PDF</h3>
-                                <p>Reformat a JPG, PNG, or other image to a PDF file in a few seconds</p>
+                                {/* <p>Reformat a JPG, PNG, or other image to a PDF file in a few seconds</p> */}
                                 </Link>
                                 <div className="tools__item__content"></div>
                             </a>
@@ -82,10 +82,10 @@ function index() {
                             <a href="openofficetopdf.html" title="openoffice_to_pdf">
                             <Link to={"openofficetopdf"}> <img src="assets/images/icons/openoffice to pdf.png" />
                                 <h3>OpenOffice to PDF</h3>
-                                <p>
+                                {/* <p>
                                     Convert OpenOffice Writer, Calc, Impress, Draw and Math files to PDF
                                     online <br /> and free
-                                </p>
+                                </p> */}
                                 </Link>
 
                                 <div className="tools__item__content"></div>
@@ -95,9 +95,9 @@ function index() {
                             <a href="ebookstopdf.html" title="ebooks_to_pdf">
                             <Link to={"ebookstopdf"}> <img src="assets/images/icons/ebooks to pdf.png" />
                                 <h3>eBooks to PDF</h3>
-                                <p>
+                                {/* <p>
                                     Convert various eBooks <br /> files like MOBI and <br /> EPUB to PDF
-                                </p>
+                                </p> */}
                                 </Link>
 
                                 <div className="tools__item__content"></div>
@@ -107,7 +107,7 @@ function index() {
                             <a href="iworktopdf.html" title="iwork_to_pdf">
                             <Link to={"iworktopdf"}> <img src="assets/images/icons/iwork to pdf.png" />
                                 <h3>iWork to PDF</h3>
-                                <p>Turn your iWork Pages, Numbers, or Keynote document into a PDF in seconds</p>
+                                {/* <p>Turn your iWork Pages, Numbers, or Keynote document into a PDF in seconds</p> */}
                                 </Link>
 
                                 <div className="tools__item__content"></div>
@@ -118,7 +118,7 @@ function index() {
                             <a href="pdftoexcel.html" title="pdf_to_excel">
                             <Link to={"pdftoexcel"}> <img src="assets/images/icons/excel to pdf.png" />
                                 <h3>PDF to Excel</h3>
-                                <p>Extract the data from <br /> PDFs directly into excel sheets</p>
+                                {/* <p>Extract the data from <br /> PDFs directly into excel sheets</p> */}
                                 </Link>
 
                                 <div className="tools__item__content"></div>
@@ -128,7 +128,7 @@ function index() {
                             <a href="pdftopowerpoint.html" title="pdf_to_powerpoint">
                             <Link to={"pdftopowerpoint"}> <img src="assets/images/icons/pdf to powerpoint.png" />
                                 <h3>PDF to Powerpoint</h3>
-                                <p>Make PPTs from PDFs in <br /> the easiest way</p>
+                                {/* <p>Make PPTs from PDFs in <br /> the easiest way</p> */}
                                 </Link>
 
                                 <div className="tools__item__content"></div>
@@ -138,7 +138,7 @@ function index() {
                             <a href="pdftojpg.html" title="pdf_to_jpg">
                             <Link to={"pdftojpg"}> <img src="assets/images/icons/pdf to jpg.png" />
                                 <h3>PDF to JPG</h3>
-                                <p>Convert PDF images <br /> directly into jpg format</p>
+                                {/* <p>Convert PDF images <br /> directly into jpg format</p> */}
                                 </Link>
 
                                 <div className="tools__item__content"></div>
@@ -148,7 +148,7 @@ function index() {
                             <a href="pdftopng.html" title="pdf_to_png">
                             <Link to={"pdftopng"}> <img src="assets/images/icons/pdf to png.png" />
                                 <h3>PDF to PNG</h3>
-                                <p>Convert PDF images <br /> directly into png format</p>
+                                {/* <p>Convert PDF images <br /> directly into png format</p> */}
                                 </Link>
 
                                 <div className="tools__item__content"></div>
@@ -158,7 +158,7 @@ function index() {
                             <a href="mergepdf.html" title="merge_pdf">
                             <Link to={"mergepdf"}>  <img src="assets/images/icons/merge pdf.png" alt="merge pdf" />
                                 <h3>Merge PDF</h3>
-                                <p>Merge multiple PDFs into <br /> a single PDF</p>
+                                {/* <p>Merge multiple PDFs into <br /> a single PDF</p> */}
                                 </Link>
 
                                 <div className="tools__item__content"></div>
@@ -168,24 +168,24 @@ function index() {
                             <a href="Pdftoword.html" title="pdf_to_pdfa">
                             <Link to={"Pdftoword"}>  <img src="assets/images/icons/pdf to word.png" alt="pdf to word" />
                                 <h3>PDF to word</h3>
-                                <p>Convert PDF files into word <br /> </p>
+                                {/* <p>Convert PDF files into word <br /> </p> */}
                                 </Link>
 
                                 <div className="tools__item__content"></div>
                             </a>
                         </div>
-                        <div>
+                        {/* <div>
                             <br />
                             <center><h1 style={{ fontSize: '24px', fontWeight: 'bold' }}>Easily convert to and from PDFs in seconds</h1></center><br />
                             <input type="file" accept="application/pdf" id="pdf-file" style={{ display: 'none' }} />
                             <center><button className="button" onClick={() => document.getElementById('pdf-file').click()}>+ Choose file</button></center>
-                        </div>
+                        </div> */}
                         <br />
                         <br />
                         <div className="outer-container">
                             <div className="container-fluid">
                                 <div className="heading text-center" style={{ fontWeight: 'bold' }}>
-                                    <h1>How to convert to and from PDF free</h1>
+                                    {/* <h1>How to convert to and from PDF free</h1> */}
                                 </div>
                                 <div className="boxes">
                                     <div className="box box1">
@@ -193,7 +193,7 @@ function index() {
                                             <div className="number-circle ps-2">1</div>
                                         </div>
                                         <div className="para-div ms-3 pt-2">
-                                            Select the Word, Excel, PowerPoint, PDF or other file you wish to convert.
+                                            {/* Select the Word, Excel, PowerPoint, PDF or other file you wish to convert. */}
                                         </div>
                                     </div>
                                     <div className="box box2">
@@ -201,7 +201,7 @@ function index() {
                                             <div className="number-circle ps-2">2</div>
                                         </div>
                                         <div className="para-div ms-3 pt-2">
-                                            Our free PDF creator will convert your document to PDF or from PDF in seconds.
+                                            {/* Our free PDF creator will convert your document to PDF or from PDF in seconds. */}
                                         </div>
                                     </div>
                                     <div className="box box3">
@@ -209,7 +209,7 @@ function index() {
                                             <div className="number-circle ps-2">3</div>
                                         </div>
                                         <div className="para-div ms-3">
-                                            Your new document will be ready to download immediately. After the download is completed, any remaining files uploaded will be purged from our server.
+                                            {/* Your new document will be ready to download immediately. After the download is completed, any remaining files uploaded will be purged from our server. */}
                                         </div>
                                     </div>
                                 </div>
@@ -217,42 +217,7 @@ function index() {
                         </div>
                     </div>
 
-                    <div className="heading2 bg-white text-center pt-3 pb-2">
-                        <h1 style={{ fontSize: 32, fontWeight: 'bold' }}>TRANSLATION</h1>
-                    </div>
-                    <div className="translate-outer-div mt-4">
-                        <div className="translate-div">
-                            <div className="translate english-div">
-                                <div>
-                                    <textarea
-                                        className="textarea"
-                                        name=""
-                                        placeholder="Type something in English."
-                                        id=""
-                                        cols="35"
-                                        rows="12"
-                                    ></textarea>
-                                </div>
-                            </div>
-                            <div className="translate btn-div">
-                                <div>
-                                    <button className="translate-btn">Translate</button>
-                                </div>
-                            </div>
-                            <div className="translate hindi-div">
-                                <div>
-                                    <textarea
-                                        className="textarea"
-                                        name=""
-                                        placeholder="Get hindi translation."
-                                        id=""
-                                        cols="35"
-                                        rows="12"
-                                    ></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
