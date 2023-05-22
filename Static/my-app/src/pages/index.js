@@ -217,7 +217,6 @@ function index() {
                         </div>
                     </div>
 
-                    
                 </div>
             </div>
         </div>

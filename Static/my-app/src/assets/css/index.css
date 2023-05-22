@@ -1192,7 +1192,8 @@ html {
     padding-right: 16px;
     padding-left: 16px;
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    display: none;
 }
 
 .row {
@@ -11342,8 +11343,8 @@ button.mat-icon-button:disabled {
 
 .tools__item a {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 82%;
+    height: 65%;
     padding: 32px;
     color: #383e45;
     position: relative;
@@ -11359,8 +11360,8 @@ button.mat-icon-button:disabled {
     }
 
     .tools__item a {
-        padding: 24px;
-        margin: 29px;
+        padding: 2px;
+        margin: 18px;
         background: rgb(255 255 255);
     }
 }
