@@ -4,6 +4,9 @@ import '../assets/css/pdftojpg.css';
 function PngToJpg() {
   const [isFileSelected, setIsFileSelected] = useState(false);
   const [selectedFileName, setSelectedFileName] = useState('');
+  const [convertedData, setConvertedData] = useState(null);
+  const [showDownloadButton, setShowDownloadButton] = useState(false);
+
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -12,7 +15,7 @@ function PngToJpg() {
       if (extension.toLowerCase() === 'png') {
         setIsFileSelected(true);
         setSelectedFileName(file.name);
-        // TODO: Handle PNG to JPG conversion logic
+        convertPngToJpg(file);
       } else {
         event.target.value = null; // Reset file input
         alert('Please select a PNG file.');
@@ -25,8 +28,28 @@ function PngToJpg() {
     }
   };
 
+  const convertPngToJpg = (file) => {
+    // Perform the PNG to JPG conversion logic here
+    // Assume the converted JPG data is stored in a variable named convertedData
+    
+    const convertedData = /* Perform the conversion */
+    setConvertedData(convertedData);
+
+    setTimeout(() => {
+      setShowDownloadButton(true);
+    }, 3000);
+  };
+
   const handleDownload = () => {
-    // TODO: Handle file download logic
+    if (convertedData) {
+      const downloadLink = URL.createObjectURL(convertedData);
+      const a = document.createElement('a');
+      a.href = downloadLink;
+      a.download = 'converted.jpg';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
   };
   
   return (
@@ -86,7 +109,7 @@ function PngToJpg() {
         <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center"></h2>
         <br />
 
-        {isFileSelected && (
+        {/* {isFileSelected && (
           <center>
             <div>
               <button className="button" onClick={handleDownload} style={{ maxWidth: '300px' }}>
@@ -94,9 +117,9 @@ function PngToJpg() {
               </button>
             </div>
           </center>
-        )}
+        )} */}
 
-        {/* {convertedData ? (
+        {showDownloadButton  ? (
           <center>
             <div>
               
@@ -107,7 +130,7 @@ function PngToJpg() {
           </center>
         ) : (
           <div></div>
-        )} */}
+        )}
       </div>
     </div>
   );
