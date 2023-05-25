@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { css } from '@emotion/react';
+import { BeatLoader } from 'react-spinners';
 import "../assets/css/index.css";
-//import styles from '../assets/css/index.css';
 
 
-function index() {
+function Index() {
+    const [loading, setLoading] = useState(false);
+
+    const handleClick = (event, destination) => {
+        event.preventDefault(); // Prevents the default link behavior
+
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            window.open(destination, '_self');
+        }, 2000);
+    };
+
+    const loaderOverride = css`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+`;
+
     return (
         <div className="lang-en-US home">
             <div id="body1">
@@ -18,9 +39,16 @@ function index() {
                 </div>
 
                 <div className="top">
-                    <Link to={"LanguageTranslation"}>
-                    <p className="mainhead" style={{ fontFamily: 'monospace' }}>TRANSLATION</p>
+                    <Link to={"LanguageTranslation"} onClick={(e) => handleClick(e, 'LanguageTranslation')}>
+                        <p className="mainhead" style={{ fontFamily: 'monospace' }}>TRANSLATION</p>
                     </Link>
+                    {loading && (
+                        <div className="loader-overlay">
+                            <div className="loader">
+                                <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 <div className="top">
@@ -40,139 +68,243 @@ function index() {
                     <div className="tools__container">
                         <div className="tools__item">
                             <a href="wordtopdf.html" title="word_to_pdf">
-                              <Link to={"wordtopdf"}> <img src="assets/images/icons/word to pdf.png" alt="Word to PDF" />
-                                <h3>Word to PDF</h3>
-                                {/* <p>Make word files easy to read by converting them into PDF</p>  */}
-                              </Link>
-                                <div className="tools__item__content"></div>
+                                <Link to={"wordtopdf"} onClick={(e) => handleClick(e, 'wordtopdf')}> <img src="assets/images/icons/word to pdf.png" alt="Word to PDF" />
+                                    <h3>Word to PDF</h3>
+                                    {/* <p>Make word files easy to read by converting them into PDF</p>  */}
+                                    <div className="tools__item__content"></div>
+                                </Link>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
                             </a>
                         </div>
 
                         <div className="tools__item">
                             <a href="exceltopdf.html" title="excel_to_pdf">
-                              <Link to={"exceltopdf"}>  <img src="assets/images/icons/excel to pdf.png" alt="Excel to PDF" />
-                                <h3>Excel to PDF</h3>
-                                {/* <p>Make excel sheets easy to read by converting them into PDF</p> */}
-                              </Link>
-                                <div className="tools__item__content"></div>
+                                <Link to={"exceltopdf"} onClick={(e) => handleClick(e, 'exceltopdf')}>  <img src="assets/images/icons/excel to pdf.png" alt="Excel to PDF" />
+                                    <h3>Excel to PDF</h3>
+                                    {/* <p>Make excel sheets easy to read by converting them into PDF</p> */}
+                                    <div className="tools__item__content"></div>
+
+                                </Link>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
                             </a>
                         </div>
 
                         <div className="tools__item">
                             <a href="powerpointtoword.html" title="powerpoint_to_word">
-                               <Link to={"powerpointtoword"}> <img src="assets/images/icons/powerpoint to pdf.png" alt="PowerPoint to PDF" />
-                                <h3>Powerpoint to PDF</h3>
-                                {/* <p>Make your PPT slides easy to view by converting them into PDF</p> */}
+                                <Link to={"powerpointtoword"} onClick={(e) => handleClick(e, 'powerpointtoword')}> <img src="assets/images/icons/powerpoint to pdf.png" alt="PowerPoint to PDF" />
+                                    <h3>Powerpoint to PDF</h3>
+                                    {/* <p>Make your PPT slides easy to view by converting them into PDF</p> */}
+                                    <div className="tools__item__content"></div>
+
                                 </Link>
-                                <div className="tools__item__content"></div>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
                             </a>
                         </div>
 
                         <div className="tools__item">
                             <a href="jpgtopdf.html" title="jpg_to_pdf">
-                                <Link to={"jpgtopdf"}><img src="assets/images/icons/jpg to pdf.png" alt="JPG to PDF" />
-                                <h3>JPG to PDF</h3>
-                                {/* <p>Reformat a JPG, PNG, or other image to a PDF file in a few seconds</p> */}
+                                <Link to={"jpgtopdf"} onClick={(e) => handleClick(e, 'jpgtopdf')}><img src="assets/images/icons/jpg to pdf.png" alt="JPG to PDF" />
+                                    <h3>JPG to PDF</h3>
+                                    {/* <p>Reformat a JPG, PNG, or other image to a PDF file in a few seconds</p> */}
+                                    <div className="tools__item__content"></div>
+
                                 </Link>
-                                <div className="tools__item__content"></div>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
                             </a>
                         </div>
 
                         <div className="tools__item">
                             <a href="openofficetopdf.html" title="openoffice_to_pdf">
-                            <Link to={"openofficetopdf"}> <img src="assets/images/icons/openoffice to pdf.png" />
-                                <h3>OpenOffice to PDF</h3>
-                                {/* <p>
+                                <Link to={"openofficetopdf"} onClick={(e) => handleClick(e, 'openofficetopdf')}> <img src="assets/images/icons/openoffice to pdf.png" />
+                                    <h3>OpenOffice to PDF</h3>
+                                    {/* <p>
                                     Convert OpenOffice Writer, Calc, Impress, Draw and Math files to PDF
                                     online <br /> and free
                                 </p> */}
+                                    <div className="tools__item__content"></div>
                                 </Link>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
 
-                                <div className="tools__item__content"></div>
                             </a>
                         </div>
                         <div className="tools__item">
                             <a href="ebookstopdf.html" title="ebooks_to_pdf">
-                            <Link to={"ebookstopdf"}> <img src="assets/images/icons/ebooks to pdf.png" />
-                                <h3>eBooks to PDF</h3>
-                                {/* <p>
+                                <Link to={"ebookstopdf"} onClick={(e) => handleClick(e, 'ebookstopdf')}> <img src="assets/images/icons/ebooks to pdf.png" />
+                                    <h3>eBooks to PDF</h3>
+                                    {/* <p>
                                     Convert various eBooks <br /> files like MOBI and <br /> EPUB to PDF
                                 </p> */}
-                                </Link>
+                                    <div className="tools__item__content"></div>
 
-                                <div className="tools__item__content"></div>
+                                </Link>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+
                             </a>
                         </div>
                         <div className="tools__item">
                             <a href="iworktopdf.html" title="iwork_to_pdf">
-                            <Link to={"iworktopdf"}> <img src="assets/images/icons/iwork to pdf.png" />
-                                <h3>iWork to PDF</h3>
-                                {/* <p>Turn your iWork Pages, Numbers, or Keynote document into a PDF in seconds</p> */}
-                                </Link>
+                                <Link to={"iworktopdf"} onClick={(e) => handleClick(e, 'iworktopdf')}> <img src="assets/images/icons/iwork to pdf.png" />
+                                    <h3>iWork to PDF</h3>
+                                    {/* <p>Turn your iWork Pages, Numbers, or Keynote document into a PDF in seconds</p> */}
+                                    <div className="tools__item__content"></div>
 
-                                <div className="tools__item__content"></div>
+                                </Link>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+
                             </a>
                         </div>
 
                         <div className="tools__item">
                             <a href="pdftoexcel.html" title="pdf_to_excel">
-                            <Link to={"pdftoexcel"}> <img src="assets/images/icons/excel to pdf.png" />
-                                <h3>PDF to Excel</h3>
-                                {/* <p>Extract the data from <br /> PDFs directly into excel sheets</p> */}
-                                </Link>
+                                <Link to={"pdftoexcel"} onClick={(e) => handleClick(e, 'pdftoexcel')}> <img src="assets/images/icons/excel to pdf.png" />
+                                    <h3>PDF to Excel</h3>
+                                    {/* <p>Extract the data from <br /> PDFs directly into excel sheets</p> */}
+                                    <div className="tools__item__content"></div>
 
-                                <div className="tools__item__content"></div>
+                                </Link>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+
                             </a>
                         </div>
                         <div className="tools__item">
                             <a href="pdftopowerpoint.html" title="pdf_to_powerpoint">
-                            <Link to={"pdftopowerpoint"}> <img src="assets/images/icons/pdf to powerpoint.png" />
-                                <h3>PDF to Powerpoint</h3>
-                                {/* <p>Make PPTs from PDFs in <br /> the easiest way</p> */}
-                                </Link>
+                                <Link to={"pdftopowerpoint"} onClick={(e) => handleClick(e, 'pdftopowerpoint')}> <img src="assets/images/icons/pdf to powerpoint.png" />
+                                    <h3>PDF to Powerpoint</h3>
+                                    {/* <p>Make PPTs from PDFs in <br /> the easiest way</p> */}
+                                    <div className="tools__item__content"></div>
 
-                                <div className="tools__item__content"></div>
+                                </Link>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+
                             </a>
                         </div>
                         <div className="tools__item">
                             <a href="pngtojpg.html" title="PNG_to_JPG">
-                            <Link to={"pngtojpg"}> <img src="assets/images/icons/pdf to jpg.png" />
-                                <h3>PNG to JPG</h3>
-                                {/* <p>Convert PDF images <br /> directly into jpg format</p> */}
+                                <Link to={"pngtojpg"} onClick={(e) => handleClick(e, 'pngtojpg')}> <img src="assets/images/icons/pdf to jpg.png" />
+                                    <h3>PNG to JPG</h3>
+                                    {/* <p>Convert PDF images <br /> directly into jpg format</p> */}
+                                    <div className="tools__item__content"></div>
+
                                 </Link>
 
-                                <div className="tools__item__content"></div>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+
                             </a>
                         </div>
                         <div className="tools__item">
                             <a href="pdftopng.html" title="pdf_to_png">
-                            <Link to={"pdftopng"}> <img src="assets/images/icons/pdf to png.png" />
-                                <h3>PDF to PNG</h3>
-                                {/* <p>Convert PDF images <br /> directly into png format</p> */}
+                                <Link to={"pdftopng"} onClick={(e) => handleClick(e, 'pdftopng')}> <img src="assets/images/icons/pdf to png.png" />
+                                    <h3>PDF to PNG</h3>
+                                    {/* <p>Convert PDF images <br /> directly into png format</p> */}
+                                    <div className="tools__item__content"></div>
+
                                 </Link>
 
-                                <div className="tools__item__content"></div>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+
                             </a>
                         </div>
                         <div className="tools__item">
                             <a href="mergepdf.html" title="merge_pdf">
-                            <Link to={"mergepdf"}>  <img src="assets/images/icons/merge pdf.png" alt="merge pdf" />
-                                <h3>Merge PDF</h3>
-                                {/* <p>Merge multiple PDFs into <br /> a single PDF</p> */}
+                                <Link to={"mergepdf"} onClick={(e) => handleClick(e, 'mergepdf')}>  <img src="assets/images/icons/merge pdf.png" alt="merge pdf" />
+                                    <h3>Merge PDF</h3>
+                                    {/* <p>Merge multiple PDFs into <br /> a single PDF</p> */}
+                                    <div className="tools__item__content"></div>
+
                                 </Link>
 
-                                <div className="tools__item__content"></div>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+
                             </a>
                         </div>
                         <div className="tools__item">
-                            <a href="Pdftoword.html" title="pdf_to_pdfa">
-                            <Link to={"Pdftoword"}>  <img src="assets/images/icons/pdf to word.png" alt="pdf to word" />
+                            <Link to={"Pdftoword"} onClick={(e) => handleClick(e, 'pdftoword')}>  <img src="assets/images/icons/pdf to word.png" alt="pdf to word" />
                                 <h3>PDF to word</h3>
                                 {/* <p>Convert PDF files into word <br /> </p> */}
-                                </Link>
-
                                 <div className="tools__item__content"></div>
-                            </a>
+
+                            </Link>
+
+                            {loading && (
+                                <div className="loader-overlay">
+                                    <div className="loader">
+                                        <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                    </div>
+                                </div>
+                            )}
+
                         </div>
                         {/* <div>
                             <br />
@@ -223,4 +355,4 @@ function index() {
     );
 }
 
-export default index;
+export default Index;
