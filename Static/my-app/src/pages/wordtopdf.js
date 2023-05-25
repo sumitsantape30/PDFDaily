@@ -1,89 +1,129 @@
-import React from 'react';
-import '../assets/css/wordtopdf.css';
+// import React from 'react';
+// import '../assets/css/wordtopdf.css';
 
-function wordtopdf() {
-  const handleFileUpload = () => {
-    // TODO: Handle file upload logic
+import React, { useState, useEffect } from 'react';
+import '../assets/css/pdftopdfa.css';
+
+function WordToPdf() {
+  const [convertedData, setConvertedData] = useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+      convertToWord(formData);
+    }
   };
 
-  const handleDownload = () => {
-    // TODO: Handle file download logic
+  const convertToWord = async (formData) => {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/word2pdf/convert/', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.blob();
+      setConvertedData(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
-    <div>
-      <div id="body1">
-        <img src="assets/images/icons/mainlogo.png" id="logo" />
-        <div className="top">
-          <img src="assets/images/icons/profile.png" id="profilepic" />
-        </div>
-
-        <div className="top">
-          <p className="mainhead" style={{ fontFamily: 'monospace' }}>
-            OCR
-          </p>
-        </div>
-
-        <div className="top">
-          <p className="mainhead" style={{ fontFamily: 'monospace' }}>
-            TRANSLATION
-          </p>
-        </div>
-
-        <div className="top">
-          <p className="mainhead" style={{ fontFamily: 'monospace' }}>
-            CONVERT WORD
-          </p>
-        </div>
-
-        <div className="top">
-          <p className="mainhead" style={{ fontFamily: 'monospace' }}>
-            CONVERT PDF
-          </p>
-        </div>
-      </div>
-
+    
+      <html lang="en">
+               <head>
+                 <meta charset="UTF-8" />
+                <title>pdf_to_pdfa</title>
+               <link rel="stylesheet" href="pdftopdfa.css" />
+              </head>
+        
+           <body>
+                 <div id="body1">
+                   <img src="assets/images/icons/mainlogo.png" id="logo" />
+                  <div className="top">
+                    <img src="assets/images/icons/profile.png" id="profilepic" />
+                 </div>
+        
+                  <div className="top">
+                    <p className="mainhead" style={{ fontFamily: 'monospace' }}>
+                    OCR
+                    </p>
+                   </div>
+        
+                <div className="top">
+                    <p className="mainhead" style={{ fontFamily: 'monospace' }}>
+                      TRANSLATION
+                  </p>
+                  </div>
+        
+                 <div className="top">
+                   <p className="mainhead" style={{ fontFamily: 'monospace' }}>
+                      CONVERT WORD
+                    </p>
+                   </div>
+        
+                  <div className="top">
+                   <p className="mainhead" style={{ fontFamily: 'monospace' }}>
+                      CONVERT PDF
+                    </p>
+                  </div>
+                 </div>
+      {/* <h1>PDF to Word Converter</h1> */}
       <div id="body2">
-        <br />
-        <br />
-        <br />
-        <img
-          src="assets/images/icons/word to pdf.png"
-          id="wordtopdf"
-          className="center"
-        />
-        <br></br>
-        <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
-          <b>Convert your word file to PDF in seconds </b>
-        </h1> 
-        <br></br>
-        <input
-          type="file"
-          id="ppt-file"
-          accept=".doc, .docx"
-          style={{ display: 'none' }}
-          onChange={handleFileUpload}
-        />
-        <center>
-          <button
-            className="button"
-            onClick={() => document.getElementById('ppt-file').click()}
-          >
-            + Select a word file
-          </button>
-          
-        </center>
-        <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
-          <b>Or drop your word file here</b>
-        </h2>
-        <br></br>
-        <center>
-          <button className="button" onClick={handleDownload}>
-            Download PDF
-          </button>
-        </center>
+                   <br />
+                  <br />
+                  <br />
+                   <img src="assets/images/icons/pdf to word.png" id="pdftopdfa" className="center" />
+                   <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
+                    <br></br>
+                   <b> Convert your Word file to Pdf file in seconds </b> 
+                   </h1>
+                   <br></br>
+                   <form >
+                   {/* <input type="file" id="pdf-file" onChange={handleFileChange} accept="application/pdf" style={{ display: 'none' }} /> */}
+                   <centre><input type="file" className="button" onChange={handleFileChange} accept=".docx,.doc" style={{ display: 'block', margin: '0 auto' }}/></centre>
+                  {/* <center><button className="button" type="submit">+ Select a PDF file</button></center> */}
+                 <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
+                     <b>Or drop your word file here</b>
+                   </h2>
+                   </form>
+                   <br></br>
+                  
+                  {convertedData ? (
+                    <center>
+                   <div>
+                    <a href={URL.createObjectURL(convertedData)} download="converted.pdf">
+                    <button className="button">
+                     Download
+                    </button>
+                    </a>
+                    </div>
+                    </center>
+                    ) : (
+                   <div></div>
+                  )} 
+                  
+      {/* <form>
+        <input type="file" onChange={handleFileChange} />
+        <button type="submit">Convert</button>
+      </form>
+      {convertedData ? (
+        <div>
+          <a href={URL.createObjectURL(convertedData)} download="converted.docx">
+            Download
+          </a>
+        </div>
+      ) : (
+        <div>No converted file available</div>
+      )} */}
       </div>
-    </div>
+      </body>
+    </html>
   );
 }
-export default wordtopdf;
+
+export default WordToPdf;
+
+  
