@@ -28,16 +28,26 @@ function PngToJpg() {
     }
   };
 
-  const convertPngToJpg = (file) => {
+  const convertPngToJpg = async(formData) => {
     // Perform the PNG to JPG conversion logic here
     // Assume the converted JPG data is stored in a variable named convertedData
-    
-    const convertedData = /* Perform the conversion */
-    setConvertedData(convertedData);
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/pdf-to-word/', {
+        method: 'POST',
+        body: formData,
+      });
+    // const convertedData = /* Perform the conversion */
+    // setConvertedData(convertedData);
+    const data = await response.blob();
+    setConvertedData(data);
+
 
     setTimeout(() => {
       setShowDownloadButton(true);
     }, 3000);
+  } catch (error) {
+    console.error('Error:', error);
+  }
   };
 
   const handleDownload = () => {
