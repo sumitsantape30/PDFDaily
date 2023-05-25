@@ -280,10 +280,21 @@ function PdfToWord() {
 
       const data = await response.blob();
       setConvertedData(data);
+
+      setTimeout(() => {
+        setIsDownloadVisible(true);
+      }, 3000); // Delay of 3 seconds
+
     } catch (error) {
       console.error('Error:', error);
     }
   };
+
+  const [isDownloadVisible, setIsDownloadVisible] = useState(false);
+
+  useEffect(() => {
+    setIsDownloadVisible(false); // Hide the download button initially
+  }, []);
 
   const handleDownload = () => {
     if (convertedData) {
