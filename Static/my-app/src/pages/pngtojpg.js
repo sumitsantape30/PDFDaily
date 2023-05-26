@@ -41,7 +41,6 @@ function PngToJpg() {
     const data = await response.blob();
     setConvertedData(data);
 
-
     setTimeout(() => {
       setShowDownloadButton(true);
     }, 3000);

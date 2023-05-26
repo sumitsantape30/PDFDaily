@@ -1,57 +1,59 @@
 import React, { useState } from "react";
-import "../assets/css/pdftopng.css";
+import "../assets/css/mergepdf.css";
 
 
-function Pdftopng() {
-
+function PowerPointToWord() {
   const [selectedFileName, setSelectedFileName] = useState("");
   const [convertedData, setConvertedData] = useState(null);
 
+
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    if (file) {
-      const extension = file.name.split('.').pop().toLowerCase();
-      if (extension === 'pdf') {
-        setSelectedFileName(file.name);
-        convertToPNG(file);
-      } else {
-        event.target.value = null; // Reset file input
-        alert('Please select a PDF document (.pdf file).');
-      }
+  if (file) {
+    const extension = file.name.split('.').pop().toLowerCase();
+    if (extension === 'ppt' || extension === 'pptx') {
+      setSelectedFileName(file.name);
+      convertToWord(file);
     } else {
-      setSelectedFileName('');
+      event.target.value = null; // Reset file input
+      alert('Please select a PowerPoint document (.ppt or .pptx file).');
     }
+  } else {
+    setSelectedFileName('');
+  }
   };
-
-  const convertToPNG = async (file) => {
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-  
-      const response = await fetch('http://127.0.0.1:8000/pdf2png/convert/', {
-        method: 'POST',
-        body: formData,
-      });
-  
-      const data = await response.blob();
-      setConvertedData(data); // Add this line to set the converted data
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
-  
-
 
   const handleDownload = () => {
     if (convertedData) {
       const downloadLink = URL.createObjectURL(convertedData);
       const a = document.createElement("a");
       a.href = downloadLink;
-      a.download = "converted.png";
+      a.download = "converted.docx";
       a.click();
       URL.revokeObjectURL(downloadLink);
     }
   };
+
+  const convertToWord = async (file) => {
+    try {
+      // Create a new FormData and append the file
+      const formData = new FormData();
+      formData.append("file", file);
+
+      // Make a POST request to the conversion endpoint
+      const response = await fetch("http://127.0.0.1:8000/ppt2word/convert/", {
+        method: "POST",
+        body: formData,
+      });
+
+      // Get the converted data
+      const data = await response.blob();
+      setConvertedData(data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
 
   return (
     <div>
@@ -77,20 +79,20 @@ function Pdftopng() {
         <br />
         <br />
         <br />
-
-        <img src="assets/images/icons/pdf to png.png" id="pdftopng" className="center" />
-        <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center"> <b>Convert your PDF file to png in seconds </b></h1>
-        <br></br>
+        <img src="assets/images/icons/merge pdf.png" id="mergepdf" className="center" />
+        <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
+          <b>Convert PowerPoint files into a word in seconds</b>
+        </h1>
         <form>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <label htmlFor="pdf-file" className="button" style={{ maxWidth: '300px' }}>
-              + Select a PDF File 
+              + Select a PowerPoint File
               <input
                 type="file"
                 id="pdf-file"
                 className="file-input"
                 onChange={handleFileChange}
-                accept="application/pdf"
+                accept=".ppt, .pptx, application/vnd.ms-powerpoint"
                 style={{ display: 'none' }}
               />
             </label>
@@ -120,4 +122,4 @@ function Pdftopng() {
   );
 }
 
-export default Pdftopng;
+export default PowerPointToWord;

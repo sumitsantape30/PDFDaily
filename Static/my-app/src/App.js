@@ -9,7 +9,7 @@ import Openofficetopdf from './pages/openofficetopdf';
 import Pdftoexcel from './pages/pdftoexcel';
 import Pngtojpg from './pages/pngtojpg';
 import Pdftopng from './pages/pdftopng';
-import Mergepdf from './pages/mergepdf';
+import Ppttoword from './pages/ppttoword';
 import Pdftoword from './pages/pdftoword';
 import Index from './pages/index';
 import LanguageTranslation from './pages/LanguageTranslation';
@@ -27,7 +27,7 @@ function App() {
         <Route path="Powerpointtoword" element={<Powerpointtoword />} />
         <Route path="Ebookstopdf" element={<Ebookstopdf />} />
         <Route path="Jpgtopdf" element={<Jpgtopdf />} />
-        <Route path="Mergepdf" element={<Mergepdf />} />
+        <Route path="Ppttoword" element={<Ppttoword />} />
         <Route path="Openofficetopdf" element={<Openofficetopdf />} />
         <Route path="Pdftoexcel" element={<Pdftoexcel />} />
         <Route path="Pngtojpg" element={<Pngtojpg />} />

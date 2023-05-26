@@ -67,7 +67,7 @@ function Index() {
                 <div className="tools">
                     <div className="tools__container">
                         <div className="tools__item">
-                            <a href="wordtopdf.html" title="word_to_pdf">
+                            <a  title="word_to_pdf">
                                 <Link to={"wordtopdf"} onClick={(e) => handleClick(e, 'wordtopdf')}> <img src="assets/images/icons/word to pdf.png" alt="Word to PDF" />
                                     <h3>Word to PDF</h3>
                                     {/* <p>Make word files easy to read by converting them into PDF</p>  */}
@@ -272,8 +272,8 @@ function Index() {
                         </div>
                         <div className="tools__item">
                             <a href="mergepdf.html" title="merge_pdf">
-                                <Link to={"mergepdf"} onClick={(e) => handleClick(e, 'mergepdf')}>  <img src="assets/images/icons/merge pdf.png" alt="merge pdf" />
-                                    <h3>Merge PDF</h3>
+                                <Link to={"ppttoword"} onClick={(e) => handleClick(e, 'ppttoword')}>  <img src="assets/images/icons/merge pdf.png" alt="merge pdf" />
+                                    <h3>PPT to Word</h3>
                                     {/* <p>Merge multiple PDFs into <br /> a single PDF</p> */}
                                     <div className="tools__item__content"></div>
 
@@ -290,6 +290,7 @@ function Index() {
                             </a>
                         </div>
                         <div className="tools__item">
+                            <a>
                             <Link to={"Pdftoword"} onClick={(e) => handleClick(e, 'pdftoword')}>  <img src="assets/images/icons/pdf to word.png" alt="pdf to word" />
                                 <h3>PDF to word</h3>
                                 {/* <p>Convert PDF files into word <br /> </p> */}
@@ -304,7 +305,7 @@ function Index() {
                                     </div>
                                 </div>
                             )}
-
+                            </a>
                         </div>
                         {/* <div>
                             <br />

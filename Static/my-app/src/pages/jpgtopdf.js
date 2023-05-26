@@ -118,14 +118,14 @@ function Jpgtopdf() {
           <img src="assets/images/icons/jpg to pdf.png" id="jpgtopdf" className="center" />
           <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
             <br></br>
-            <b> Convert your PDF file to word file in seconds </b>
+            <b> Convert your JPG file to PDF in seconds </b>
           </h1>
           <br></br>
 
           <form >
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <label htmlFor="jpg-file" className="button" style={{ maxWidth: '300px' }}>
-                + Select a PDF File
+                + Select a JPG File
                 <input
                   type="file"
                   id="jpg-file"
@@ -155,6 +155,7 @@ function Jpgtopdf() {
           </div>
         </center>
       )}
+
        {convertedData ? (
             <center>
               <div>
@@ -169,6 +170,7 @@ function Jpgtopdf() {
           ) : (
             <div></div>
           )}
+
       {/* {convertedData ? (
                     <center>
                    <div>
