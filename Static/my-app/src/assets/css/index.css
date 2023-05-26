@@ -13,7 +13,7 @@
 
 #body1{
     background: linear-gradient(to left, #08EBEB, #1259AB);
-    width: 1226px;
+    width: 1525px;
     height: 80px;
     margin: 0px;
     padding: 0px;
@@ -11367,7 +11367,7 @@ button.mat-icon-button:disabled {
     z-index: 2
 }
 
-@media (max-width: 90em) {
+@media (max-width: 100em) {
     .tools__item {
         font-size:36px;
         line-height: 38px;
