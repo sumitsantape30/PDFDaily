@@ -15,16 +15,16 @@ function Index() {
         setTimeout(() => {
             setLoading(false);
             window.open(destination, '_self');
-        }, 2000);
+        }, 3000);
     };
 
     const loaderOverride = css`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-`;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+    `;
 
     return (
         <div className="lang-en-US home">
