@@ -28,7 +28,7 @@ function PowerPointToWord() {
       const downloadLink = URL.createObjectURL(convertedData);
       const a = document.createElement("a");
       a.href = downloadLink;
-      a.download = "converted.docx";
+      a.download = "converted.pdf";
       a.click();
       URL.revokeObjectURL(downloadLink);
     }
@@ -41,7 +41,7 @@ function PowerPointToWord() {
       formData.append("file", file);
 
       // Make a POST request to the conversion endpoint
-      const response = await fetch("http://127.0.0.1:8000/ppt2word/convert/", {
+      const response = await fetch("http://127.0.0.1:8000/ppt2pdf/ppt-to-pdf/", {
         method: "POST",
         body: formData,
       });
@@ -81,7 +81,7 @@ function PowerPointToWord() {
         <br />
         <img src="assets/images/icons/merge pdf.png" id="mergepdf" className="center" />
         <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
-          <b>Convert PowerPoint files into a word in seconds</b>
+          <b>Convert PowerPoint files into a pdf in seconds</b>
         </h1>
         <form>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
