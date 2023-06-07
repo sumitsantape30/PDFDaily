@@ -98,7 +98,7 @@ function WordToPdf() {
           <form >
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <label htmlFor="pdf-file" className="button" style={{ maxWidth: '300px' }}>
-                + Select a PDF File
+                + Select a word File
                 <input
                   type="file"
                   id="pdf-file"
@@ -124,7 +124,7 @@ function WordToPdf() {
             <center>
               <div>
                 <a href={URL.createObjectURL(convertedData)} download="converted.pdf">
-                  <button className="button">
+                  <button className="button" style={{ maxWidth: '300px' }}>
                     Download
                   </button>
                 </a>
