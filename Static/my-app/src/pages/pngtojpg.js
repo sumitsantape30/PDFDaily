@@ -2,37 +2,45 @@ import React, { useState } from 'react';
 import '../assets/css/pdftojpg.css';
 
 function PngToJpg() {
-  const [isFileSelected, setIsFileSelected] = useState(false);
-  const [selectedFileName, setSelectedFileName] = useState('');
+  // const [isFileSelected, setIsFileSelected] = useState(false);
+  const [selectedFileName, setSelectedFileName] = useState("");
   const [convertedData, setConvertedData] = useState(null);
-  const [showDownloadButton, setShowDownloadButton] = useState(false);
-
+  // const [showDownloadButton, setShowDownloadButton] = useState(false);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    if (file) {
-      const extension = file.name.split('.').pop();
-      if (extension.toLowerCase() === 'png') {
-        setIsFileSelected(true);
-        setSelectedFileName(file.name);
-        convertPngToJpg(file);
-      } else {
-        event.target.value = null; // Reset file input
-        alert('Please select a PNG file.');
-        setIsFileSelected(false);
-        setSelectedFileName('');
-      }
+  if (file) {
+    const extension = file.name.split('.').pop().toLowerCase();
+    if (extension === 'png') {
+      setSelectedFileName(file.name);
+      convertPngToJpg(file);
     } else {
-      setIsFileSelected(false);
-      setSelectedFileName('');
+      event.target.value = null; // Reset file input
+      alert('Please select a PowerPoint document (.png file).');
+    }
+  } else {
+    setSelectedFileName('');
+  }
+  };
+  
+  const handleDownload = () => {
+    if (convertedData) {
+      const downloadLink = URL.createObjectURL(convertedData);
+      const a = document.createElement("a");
+      a.href = downloadLink;
+      a.download = "converted.jpg";
+      a.click();
+      URL.revokeObjectURL(downloadLink);
     }
   };
 
-  const convertPngToJpg = async(formData) => {
+  const convertPngToJpg = async(png_file) => {
     // Perform the PNG to JPG conversion logic here
     // Assume the converted JPG data is stored in a variable named convertedData
+    const formData = new FormData();
+    formData.append('png_file',png_file);
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/pdf-to-word/', {
+      const response = await fetch('http://127.0.0.1:8000/png2jpg/png-to-jpg/', {
         method: 'POST',
         body: formData,
       });
@@ -41,24 +49,12 @@ function PngToJpg() {
     const data = await response.blob();
     setConvertedData(data);
 
-    setTimeout(() => {
-      setShowDownloadButton(true);
-    }, 3000);
+    // setTimeout(() => {
+    //   setShowDownloadButton(true);
+    // }, 3000);
   } catch (error) {
     console.error('Error:', error);
   }
-  };
-
-  const handleDownload = () => {
-    if (convertedData) {
-      const downloadLink = URL.createObjectURL(convertedData);
-      const a = document.createElement('a');
-      a.href = downloadLink;
-      a.download = 'converted.jpg';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    }
   };
   
   return (
@@ -106,7 +102,7 @@ function PngToJpg() {
                 id="png-file"
                 className="file-input"
                 onChange={handleFileChange}
-                accept="image/png"
+                accept=".png"
                 style={{ display: 'none' }}
               />
             </label>
@@ -118,28 +114,22 @@ function PngToJpg() {
         <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center"></h2>
         <br />
 
-        {/* {isFileSelected && (
-          <center>
-            <div>
-              <button className="button" onClick={handleDownload} style={{ maxWidth: '300px' }}>
-                Convert File
-              </button>
-            </div>
-          </center>
-        )} */}
+       
+          {convertedData ? (
+            <center>
+              <div>
+                <a href={URL.createObjectURL(convertedData)} download="converted.jpg">
+                  <button className="button" style={{ maxWidth: '300px' }} onClick={handleDownload}>
+                    Download
 
-        {showDownloadButton  ? (
-          <center>
-            <div>
-              
-              <button className="button" onClick={handleDownload}>
-                Download
-              </button>
-            </div>
-          </center>
-        ) : (
-          <div></div>
-        )}
+                  </button>
+                </a>
+              </div>
+            </center>
+          ) : (
+            <div></div>
+          )}
+
       </div>
     </div>
   );

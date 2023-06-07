@@ -14,27 +14,54 @@ function Jpgtopdf() {
   //     convertTopdf(formData);
   //   }
   // };
+  // const handleFileChange = (event) => {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     const extension = file.name.split('.').pop();
+  //     if (extension.toLowerCase() === 'jpg') {
+  //       const formData = new FormData();
+  //       formData.append('file', file);
+  //       setIsFileSelected(true);
+  //       setSelectedFileName(file.name);
+  //       convertTopdf(formData);
+  //     } else {
+  //       event.target.value = null; // Reset file input
+  //       alert('Please select a jpg file.');
+  //     }
+  //   } else {
+  //     setIsFileSelected(false);
+  //     setSelectedFileName('');
+  //   }
+  // };
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    if (file) {
-      const extension = file.name.split('.').pop();
-      if (extension.toLowerCase() === 'jpg') {
-        const formData = new FormData();
-        formData.append('file', file);
-        setIsFileSelected(true);
-        setSelectedFileName(file.name);
-        convertTopdf(formData);
-      } else {
-        event.target.value = null; // Reset file input
-        alert('Please select a jpg file.');
-      }
+  if (file) {
+    const extension = file.name.split('.').pop().toLowerCase();
+    if (extension === 'jpg') {
+      setSelectedFileName(file.name);
+      convertTopdf(file);
     } else {
-      setIsFileSelected(false);
-      setSelectedFileName('');
+      event.target.value = null; // Reset file input
+      alert('Please select a PowerPoint document (.jpg file).');
+    }
+  } else {
+    setSelectedFileName('');
+  }
+  };
+  const handleDownload = () => {
+    if (convertedData) {
+      const downloadLink = URL.createObjectURL(convertedData);
+      const a = document.createElement("a");
+      a.href = downloadLink;
+      a.download = "converted.jpg";
+      a.click();
+      URL.revokeObjectURL(downloadLink);
     }
   };
 
-  const convertTopdf = async (formData) => {
+  const convertTopdf = async (jpg_file) => {
+    const formData = new FormData();
+    formData.append('jpg_file',jpg_file);
     try {
       const response = await fetch('http://127.0.0.1:8000/jpg2pdf/jpg-to-pdf/', {
         method: 'POST',
@@ -47,17 +74,17 @@ function Jpgtopdf() {
       console.error('Error:', error);
     }
   };
-  const handleDownload = () => {
-    if (convertedData) {
-      const downloadLink = URL.createObjectURL(convertedData);
-      const a = document.createElement('a');
-      a.href = downloadLink;
-      a.download = 'converted.pdf';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    }
-  };
+  // const handleDownload = () => {
+  //   if (convertedData) {
+  //     const downloadLink = URL.createObjectURL(convertedData);
+  //     const a = document.createElement('a');
+  //     a.href = downloadLink;
+  //     a.download = 'converted.pdf';
+  //     document.body.appendChild(a);
+  //     a.click();
+  //     document.body.removeChild(a);
+  //   }
+  // };
 
   return (
     <html lang="en">
@@ -131,7 +158,7 @@ function Jpgtopdf() {
                   id="jpg-file"
                   className="file-input"
                   onChange={handleFileChange}
-                  accept="application/jpg"
+                  accept=".jpg"
                   style={{ display: 'none' }}
                 />
               </label>
