@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Upload PPT Image</title>
+  </head>
+  <body>
+    <h1>Upload a PPT  to convert to PDF</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="pdf-file"><br>
+      <input type="submit" value="Convert to Word">
+    </form>
+
+    
+  </body>
+</html>
