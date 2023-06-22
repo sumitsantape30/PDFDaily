@@ -67,7 +67,7 @@ function Index() {
                 <div className="tools">
                     <div className="tools__container">
                         <div className="tools__item">
-                            <a  title="word_to_pdf">
+                            <a title="word_to_pdf">
                                 <Link to={"wordtopdf"} onClick={(e) => handleClick(e, 'wordtopdf')}> <img src="assets/images/icons/word to pdf.png" alt="Word to PDF" />
                                     <h3>Word to PDF</h3>
                                     {/* <p>Make word files easy to read by converting them into PDF</p>  */}
@@ -83,12 +83,12 @@ function Index() {
                             </a>
                         </div>
 
-                        <div className="tools__item">
-                            <a href="exceltopdf.html" title="excel_to_pdf">
-                                <Link to={"exceltopdf"} onClick={(e) => handleClick(e, 'exceltopdf')}>  <img src="assets/images/icons/excel to pdf.png" alt="Excel to PDF" />
+                        <div className="tools__item inactive-overlay">
+                            <a title="excel_to_pdf">
+                                <Link>  <img src="assets/images/icons/excel to pdf.png" alt="Excel to PDF" />
                                     <h3>Excel to PDF</h3>
                                     {/* <p>Make excel sheets easy to read by converting them into PDF</p> */}
-                                    <div className="tools__item__content"></div>
+                                    <div className="tools__item__content inactive-overlay"></div>
 
                                 </Link>
                                 {loading && (
@@ -101,12 +101,12 @@ function Index() {
                             </a>
                         </div>
 
-                        <div className="tools__item">
-                            <a href="powerpointtoword.html" title="powerpoint_to_word">
-                                <Link to={"powerpointtoword"} onClick={(e) => handleClick(e, 'powerpointtoword')}> <img src="assets/images/icons/powerpoint to pdf.png" alt="PowerPoint to PDF" />
+                        <div className="tools__item inactive-overlay">
+                            <a title="powerpoint_to_word">
+                                <Link > <img src="assets/images/icons/powerpoint to pdf.png" alt="PowerPoint to PDF" />
                                     <h3>Powerpoint to PDF</h3>
                                     {/* <p>Make your PPT slides easy to view by converting them into PDF</p> */}
-                                    <div className="tools__item__content"></div>
+                                    <div className="tools__item__content inactive-overlay"></div>
 
                                 </Link>
                                 {loading && (
@@ -137,34 +137,31 @@ function Index() {
                             </a>
                         </div>
 
-                        <div className="tools__item">
-                            <a href="openofficetopdf.html" title="openoffice_to_pdf">
-                                <Link to={"openofficetopdf"} onClick={(e) => handleClick(e, 'openofficetopdf')}> <img src="assets/images/icons/openoffice to pdf.png" />
+                        <div className="tools__item inactive-overlay">
+                            <a title="openoffice_to_pdf">
+                                <Link>
+                                    <div className="inactive-overlay"></div> {/* Transparent block */}
+                                    <img src="assets/images/icons/openoffice to pdf.png" alt="OpenOffice to PDF" />
                                     <h3>OpenOffice to PDF</h3>
-                                    {/* <p>
-                                    Convert OpenOffice Writer, Calc, Impress, Draw and Math files to PDF
-                                    online <br /> and free
-                                </p> */}
-                                    <div className="tools__item__content"></div>
                                 </Link>
-                                {loading && (
+                                {/* {loading && (
                                     <div className="loader-overlay">
                                         <div className="loader">
                                             <BeatLoader color="#000" css={loaderOverride} loading={loading} />
                                         </div>
                                     </div>
-                                )}
+                                )} */}
 
                             </a>
                         </div>
-                        <div className="tools__item">
-                            <a href="ebookstopdf.html" title="ebooks_to_pdf">
-                                <Link to={"ebookstopdf"} onClick={(e) => handleClick(e, 'ebookstopdf')}> <img src="assets/images/icons/ebooks to pdf.png" />
+                        <div className="tools__item inactive-overlay">
+                            <a title="ebooks_to_pdf">
+                                <Link> <img src="assets/images/icons/ebooks to pdf.png" />
                                     <h3>eBooks to PDF</h3>
                                     {/* <p>
                                     Convert various eBooks <br /> files like MOBI and <br /> EPUB to PDF
                                 </p> */}
-                                    <div className="tools__item__content"></div>
+                                    <div className="inactive-overlay"></div>
 
                                 </Link>
                                 {loading && (
@@ -177,12 +174,12 @@ function Index() {
 
                             </a>
                         </div>
-                        <div className="tools__item">
-                            <a href="iworktopdf.html" title="iwork_to_pdf">
-                                <Link to={"iworktopdf"} onClick={(e) => handleClick(e, 'iworktopdf')}> <img src="assets/images/icons/iwork to pdf.png" />
+                        <div className="tools__item inactive-overlay">
+                            <a title="iwork_to_pdf">
+                                <Link> <img src="assets/images/icons/iwork to pdf.png" />
                                     <h3>iWork to PDF</h3>
                                     {/* <p>Turn your iWork Pages, Numbers, or Keynote document into a PDF in seconds</p> */}
-                                    <div className="tools__item__content"></div>
+                                    <div className="tools__item__content inactive-overlay"></div>
 
                                 </Link>
                                 {loading && (
@@ -196,12 +193,12 @@ function Index() {
                             </a>
                         </div>
 
-                        <div className="tools__item">
-                            <a href="pdftoexcel.html" title="pdf_to_excel">
-                                <Link to={"pdftoexcel"} onClick={(e) => handleClick(e, 'pdftoexcel')}> <img src="assets/images/icons/excel to pdf.png" />
+                        <div className="tools__item inactive-overlay">
+                            <a  title="pdf_to_excel">
+                                <Link > <img src="assets/images/icons/excel to pdf.png" />
                                     <h3>PDF to Excel</h3>
                                     {/* <p>Extract the data from <br /> PDFs directly into excel sheets</p> */}
-                                    <div className="tools__item__content"></div>
+                                    <div className="tools__item__content inactive-overlay"></div>
 
                                 </Link>
                                 {loading && (
@@ -214,12 +211,12 @@ function Index() {
 
                             </a>
                         </div>
-                        <div className="tools__item">
-                            <a href="pdftopowerpoint.html" title="pdf_to_powerpoint">
-                                <Link to={"pdftopowerpoint"} onClick={(e) => handleClick(e, 'pdftopowerpoint')}> <img src="assets/images/icons/pdf to powerpoint.png" />
+                        <div className="tools__item inactive-overlay">
+                            <a title="pdf_to_powerpoint">
+                                <Link > <img src="assets/images/icons/pdf to powerpoint.png" />
                                     <h3>PDF to Powerpoint</h3>
                                     {/* <p>Make PPTs from PDFs in <br /> the easiest way</p> */}
-                                    <div className="tools__item__content"></div>
+                                    <div className="tools__item__content inactive-overlay"></div>
 
                                 </Link>
                                 {loading && (
@@ -251,12 +248,12 @@ function Index() {
 
                             </a>
                         </div>
-                        <div className="tools__item">
-                            <a href="pdftopng.html" title="pdf_to_png">
-                                <Link to={"pdftopng"} onClick={(e) => handleClick(e, 'pdftopng')}> <img src="assets/images/icons/pdf to png.png" />
+                        <div className="tools__item inactive-overlay">
+                            <a  title="pdf_to_png">
+                                <Link > <img src="assets/images/icons/pdf to png.png" />
                                     <h3>PDF to PNG</h3>
                                     {/* <p>Convert PDF images <br /> directly into png format</p> */}
-                                    <div className="tools__item__content"></div>
+                                    <div className="tools__item__content inactive-overlay"></div>
 
                                 </Link>
 
@@ -270,12 +267,12 @@ function Index() {
 
                             </a>
                         </div>
-                        <div className="tools__item">
-                            <a href="mergepdf.html" title="merge_pdf">
-                                <Link to={"ppttoword"} onClick={(e) => handleClick(e, 'ppttoword')}>  <img src="assets/images/icons/merge pdf.png" alt="merge pdf" />
+                        <div className="tools__item inactive-overlay">
+                            <a  title="merge_pdf">
+                                <Link >  <img src="assets/images/icons/merge pdf.png" alt="merge pdf" />
                                     <h3>PPT to Word</h3>
                                     {/* <p>Merge multiple PDFs into <br /> a single PDF</p> */}
-                                    <div className="tools__item__content"></div>
+                                    <div className="tools__item__content inactive-overlay"></div>
 
                                 </Link>
 
@@ -291,20 +288,20 @@ function Index() {
                         </div>
                         <div className="tools__item">
                             <a>
-                            <Link to={"Pdftoword"} onClick={(e) => handleClick(e, 'pdftoword')}>  <img src="assets/images/icons/pdf to word.png" alt="pdf to word" />
-                                <h3>PDF to word</h3>
-                                {/* <p>Convert PDF files into word <br /> </p> */}
-                                <div className="tools__item__content"></div>
+                                <Link to={"Pdftoword"} onClick={(e) => handleClick(e, 'pdftoword')}>  <img src="assets/images/icons/pdf to word.png" alt="pdf to word" />
+                                    <h3>PDF to word</h3>
+                                    {/* <p>Convert PDF files into word <br /> </p> */}
+                                    <div className="tools__item__content"></div>
 
-                            </Link>
+                                </Link>
 
-                            {loading && (
-                                <div className="loader-overlay">
-                                    <div className="loader">
-                                        <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
                                     </div>
-                                </div>
-                            )}
+                                )}
                             </a>
                         </div>
                         {/* <div>
