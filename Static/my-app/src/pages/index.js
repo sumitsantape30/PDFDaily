@@ -100,12 +100,30 @@ function Index() {
                                 )}
                             </a>
                         </div>
+                        <div className="tools__item">
+                            <a>
+                                <Link to={"Powerpointtoword"} onClick={(e) => handleClick(e, 'powerpointtoword')}>  <img src="assets/images/icons/powerpoint to pdf.png" alt="powerpoint to Pdf" />
+                                    <h3>PPT to PDF</h3>
+                                    {/* <p>Convert PDF files into word <br /> </p> */}
+                                    <div className="tools__item__content"></div>
 
-                        <div className="tools__item inactive-overlay">
+                                </Link>
+
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+                            </a>
+                        </div>
+                        
+                        {/* <div className="tools__item inactive-overlay">
                             <a title="powerpoint_to_word">
                                 <Link > <img src="assets/images/icons/powerpoint to pdf.png" alt="PowerPoint to PDF" />
                                     <h3>Powerpoint to PDF</h3>
-                                    {/* <p>Make your PPT slides easy to view by converting them into PDF</p> */}
+                                   
                                     <div className="tools__item__content inactive-overlay"></div>
 
                                 </Link>
@@ -117,7 +135,7 @@ function Index() {
                                     </div>
                                 )}
                             </a>
-                        </div>
+                        </div> */}
 
                         <div className="tools__item">
                             <a href="jpgtopdf.html" title="jpg_to_pdf">
