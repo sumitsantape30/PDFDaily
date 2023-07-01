@@ -63,6 +63,62 @@ function PngToJpg() {
   
   return (
 
+    <html>
+
+      <head>
+
+      <title>png_to_jpg</title>
+
+      <style>
+        {`
+            .modal {
+              display: ${showModal ? 'block' : 'none'};
+              position: fixed;
+              z-index: 1;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              overflow: auto;
+              background-color: rgba(0, 0, 0, 0.4);
+              animation: fadeIn 0.3s ease-in-out;
+            }
+            
+            .modal-content {
+              background-color: #fefefe;
+              margin: 15% auto;
+              padding: 20px;
+              border: 1px solid #888;
+              width: 300px;
+              text-align: center;
+              animation: slideIn 0.3s ease-in-out;
+            }
+            
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+              }
+              to {
+                opacity: 1;
+              }
+            }
+            
+            @keyframes slideIn {
+              from {
+                transform: translateY(-20%);
+              }
+              to {
+                transform: translateY(0);
+              }
+            }
+          `}
+        </style>
+
+      </head>
+
+      <body>
+
+      
     <div>
       <div id="body1">
         <img src="assets/images/icons/mainlogo.png" id="logo" />
@@ -124,7 +180,7 @@ function PngToJpg() {
                 <span className="close" onClick={() => setShowModal(false)}>
                   &times;
                 </span>
-                <p>Please select a PowerPoint document (.jpg file).</p>
+                <p>Please select a PNG file.</p>
                 <button onClick={() => setShowModal(false)}>Close</button>
               </div>
             </div>
@@ -151,6 +207,8 @@ function PngToJpg() {
 
       </div>
     </div>
+    </body>
+    </html>
   );
 }
 
