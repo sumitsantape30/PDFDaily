@@ -5,6 +5,7 @@ import "../assets/css/mergepdf.css";
 function PowerPointToWord() {
   const [selectedFileName, setSelectedFileName] = useState("");
   const [convertedData, setConvertedData] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
 
   const handleFileChange = (event) => {
@@ -16,7 +17,9 @@ function PowerPointToWord() {
       convertToWord(file);
     } else {
       event.target.value = null; // Reset file input
-      alert('Please select a PowerPoint document (.ppt or .pptx file).');
+      //alert('Please select a PowerPoint document (.ppt or .pptx file).');
+      setShowModal(true);
+
     }
   } else {
     setSelectedFileName('');
@@ -54,8 +57,8 @@ function PowerPointToWord() {
     }
   };
 
-
   return (
+    
     <div>
       <div id="body1">
         <img src="assets/images/icons/mainlogo.png" id="logo" />
@@ -80,10 +83,12 @@ function PowerPointToWord() {
         <br />
         <br />
         <img src="assets/images/icons/powerpoint to pdf.png" id="mergepdf" className="center" />
+        <br></br>
         {/* <img src="assets/images/icons/merge pdf.png" id="mergepdf" className="center" /> */}
         <h1 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center">
           <b>Convert PowerPoint files into a pdf in seconds</b>
         </h1>
+        <br></br>
         <form>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <label htmlFor="pdf-file" className="button" style={{ maxWidth: '300px' }}>
@@ -105,6 +110,18 @@ function PowerPointToWord() {
             {/* <b>Or drop your word file here</b> */}
           </h2>
         </form>
+
+        {showModal && (
+            <div className="modal">
+              <div className="modal-content">
+                <span className="close" onClick={() => setShowModal(false)}>
+                  &times;
+                </span>
+                <p>Please select a Word document (.docx file).</p>
+                <button onClick={() => setShowModal(false)}>Close</button>
+              </div>
+            </div>
+          )}
 
         <br></br>
 

@@ -6,6 +6,8 @@ function Jpgtopdf() {
   const [convertedData, setConvertedData] = useState(null);
   const [isFileSelected, setIsFileSelected] = useState(false);
   const [selectedFileName, setSelectedFileName] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  
   // const handleFileChange = (event) => {
   //   const file = event.target.files[0];
   //   if (file) {
@@ -42,7 +44,9 @@ function Jpgtopdf() {
       convertTopdf(file);
     } else {
       event.target.value = null; // Reset file input
-      alert('Please select a PowerPoint document (.jpg file).');
+      //alert('Please select a PowerPoint document (.jpg file).');
+      setShowModal(true);
+
     }
   } else {
     setSelectedFileName('');
@@ -92,6 +96,51 @@ function Jpgtopdf() {
         <meta charset="UTF-8" />
         <title>pdf to word</title>
         <link rel="stylesheet" href="pdftopdfa.css" />
+        <style>
+        {`
+            .modal {
+              display: ${showModal ? 'block' : 'none'};
+              position: fixed;
+              z-index: 1;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              overflow: auto;
+              background-color: rgba(0, 0, 0, 0.4);
+              animation: fadeIn 0.3s ease-in-out;
+            }
+            
+            .modal-content {
+              background-color: #fefefe;
+              margin: 15% auto;
+              padding: 20px;
+              border: 1px solid #888;
+              width: 300px;
+              text-align: center;
+              animation: slideIn 0.3s ease-in-out;
+            }
+            
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+              }
+              to {
+                opacity: 1;
+              }
+            }
+            
+            @keyframes slideIn {
+              from {
+                transform: translateY(-20%);
+              }
+              to {
+                transform: translateY(0);
+              }
+            }
+          `}
+        </style>
+
       </head>
 
       <body>
@@ -170,6 +219,19 @@ function Jpgtopdf() {
               {/* <b>Or drop your word file here</b> */}
             </h2>
           </form>
+
+          {/* Modal */}
+          {showModal && (
+            <div className="modal">
+              <div className="modal-content">
+                <span className="close" onClick={() => setShowModal(false)}>
+                  &times;
+                </span>
+                <p>Please select a PowerPoint document (.jpg file).</p>
+                <button onClick={() => setShowModal(false)}>Close</button>
+              </div>
+            </div>
+          )}
 
           <br></br>
 

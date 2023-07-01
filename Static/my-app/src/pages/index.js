@@ -83,6 +83,81 @@ function Index() {
                             </a>
                         </div>
 
+                        <div className="tools__item">
+                            <a>
+                                <Link to={"Powerpointtoword"} onClick={(e) => handleClick(e, 'powerpointtoword')}>  <img src="assets/images/icons/powerpoint to pdf.png" alt="powerpoint to Pdf" />
+                                    <h3>PPT to PDF</h3>
+                                    {/* <p>Convert PDF files into word <br /> </p> */}
+                                    <div className="tools__item__content"></div>
+                                </Link>
+
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+                            </a>
+                        </div>
+
+                        <div className="tools__item">
+                            <a href="jpgtopdf.html" title="jpg_to_pdf">
+                                <Link to={"jpgtopdf"} onClick={(e) => handleClick(e, 'jpgtopdf')}><img src="assets/images/icons/jpg to pdf.png" alt="JPG to PDF" />
+                                    <h3>JPG to PDF</h3>
+                                    {/* <p>Reformat a JPG, PNG, or other image to a PDF file in a few seconds</p> */}
+                                    <div className="tools__item__content"></div>
+
+                                </Link>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+                            </a>
+                        </div>
+
+                        <div className="tools__item">
+                            <a href="pngtojpg.html" title="PNG_to_JPG">
+                                <Link to={"pngtojpg"} onClick={(e) => handleClick(e, 'pngtojpg')}> <img src="assets/images/icons/pdf to jpg.png" />
+                                    <h3>PNG to JPG</h3>
+                                    {/* <p>Convert PDF images <br /> directly into jpg format</p> */}
+                                    <div className="tools__item__content"></div>
+
+                                </Link>
+
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+
+                            </a>
+                        </div>
+
+                        <div className="tools__item">
+                            <a>
+                                <Link to={"Pdftoword"} onClick={(e) => handleClick(e, 'pdftoword')}>  <img src="assets/images/icons/pdf to word.png" alt="pdf to word" />
+                                    <h3>PDF to word</h3>
+                                    {/* <p>Convert PDF files into word <br /> </p> */}
+                                    <div className="tools__item__content"></div>
+
+                                </Link>
+
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+                            </a>
+                        </div>
+
                         <div className="tools__item inactive-overlay">
                             <a title="excel_to_pdf">
                                 <Link>  <img src="assets/images/icons/excel to pdf.png" alt="Excel to PDF" />
@@ -100,24 +175,7 @@ function Index() {
                                 )}
                             </a>
                         </div>
-                        <div className="tools__item">
-                            <a>
-                                <Link to={"Powerpointtoword"} onClick={(e) => handleClick(e, 'powerpointtoword')}>  <img src="assets/images/icons/powerpoint to pdf.png" alt="powerpoint to Pdf" />
-                                    <h3>PPT to PDF</h3>
-                                    {/* <p>Convert PDF files into word <br /> </p> */}
-                                    <div className="tools__item__content"></div>
-
-                                </Link>
-
-                                {loading && (
-                                    <div className="loader-overlay">
-                                        <div className="loader">
-                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
-                                        </div>
-                                    </div>
-                                )}
-                            </a>
-                        </div>
+                        
                         
                         {/* <div className="tools__item inactive-overlay">
                             <a title="powerpoint_to_word">
@@ -137,23 +195,7 @@ function Index() {
                             </a>
                         </div> */}
 
-                        <div className="tools__item">
-                            <a href="jpgtopdf.html" title="jpg_to_pdf">
-                                <Link to={"jpgtopdf"} onClick={(e) => handleClick(e, 'jpgtopdf')}><img src="assets/images/icons/jpg to pdf.png" alt="JPG to PDF" />
-                                    <h3>JPG to PDF</h3>
-                                    {/* <p>Reformat a JPG, PNG, or other image to a PDF file in a few seconds</p> */}
-                                    <div className="tools__item__content"></div>
-
-                                </Link>
-                                {loading && (
-                                    <div className="loader-overlay">
-                                        <div className="loader">
-                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
-                                        </div>
-                                    </div>
-                                )}
-                            </a>
-                        </div>
+                        
 
                         <div className="tools__item inactive-overlay">
                             <a title="openoffice_to_pdf">
@@ -247,25 +289,8 @@ function Index() {
 
                             </a>
                         </div>
-                        <div className="tools__item">
-                            <a href="pngtojpg.html" title="PNG_to_JPG">
-                                <Link to={"pngtojpg"} onClick={(e) => handleClick(e, 'pngtojpg')}> <img src="assets/images/icons/pdf to jpg.png" />
-                                    <h3>PNG to JPG</h3>
-                                    {/* <p>Convert PDF images <br /> directly into jpg format</p> */}
-                                    <div className="tools__item__content"></div>
+                        
 
-                                </Link>
-
-                                {loading && (
-                                    <div className="loader-overlay">
-                                        <div className="loader">
-                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
-                                        </div>
-                                    </div>
-                                )}
-
-                            </a>
-                        </div>
                         <div className="tools__item inactive-overlay">
                             <a  title="pdf_to_png">
                                 <Link > <img src="assets/images/icons/pdf to png.png" />
@@ -304,24 +329,8 @@ function Index() {
 
                             </a>
                         </div>
-                        <div className="tools__item">
-                            <a>
-                                <Link to={"Pdftoword"} onClick={(e) => handleClick(e, 'pdftoword')}>  <img src="assets/images/icons/pdf to word.png" alt="pdf to word" />
-                                    <h3>PDF to word</h3>
-                                    {/* <p>Convert PDF files into word <br /> </p> */}
-                                    <div className="tools__item__content"></div>
 
-                                </Link>
-
-                                {loading && (
-                                    <div className="loader-overlay">
-                                        <div className="loader">
-                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
-                                        </div>
-                                    </div>
-                                )}
-                            </a>
-                        </div>
+                        
                         {/* <div>
                             <br />
                             <center><h1 style={{ fontSize: '24px', fontWeight: 'bold' }}>Easily convert to and from PDFs in seconds</h1></center><br />

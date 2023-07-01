@@ -6,6 +6,8 @@ function PngToJpg() {
   const [selectedFileName, setSelectedFileName] = useState("");
   const [convertedData, setConvertedData] = useState(null);
   // const [showDownloadButton, setShowDownloadButton] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -16,7 +18,9 @@ function PngToJpg() {
       convertPngToJpg(file);
     } else {
       event.target.value = null; // Reset file input
-      alert('Please select a PowerPoint document (.png file).');
+     // alert('Please select a PowerPoint document (.png file).');
+     setShowModal(true);
+
     }
   } else {
     setSelectedFileName('');
@@ -58,6 +62,7 @@ function PngToJpg() {
   };
   
   return (
+
     <div>
       <div id="body1">
         <img src="assets/images/icons/mainlogo.png" id="logo" />
@@ -111,6 +116,20 @@ function PngToJpg() {
             )}
           </div>
         </form>
+
+        {/* Modal */}
+        {showModal && (
+            <div className="modal">
+              <div className="modal-content">
+                <span className="close" onClick={() => setShowModal(false)}>
+                  &times;
+                </span>
+                <p>Please select a PowerPoint document (.jpg file).</p>
+                <button onClick={() => setShowModal(false)}>Close</button>
+              </div>
+            </div>
+          )}
+
         <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center"></h2>
         <br />
 
