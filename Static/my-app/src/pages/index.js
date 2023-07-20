@@ -216,14 +216,14 @@ function Index() {
 
                             </a>
                         </div>
-                        <div className="tools__item inactive-overlay">
-                            <a title="ebooks_to_pdf">
-                                <Link> <img src="assets/images/icons/ebooks to pdf.png" />
-                                    <h3>eBooks to PDF</h3>
+                        <div className="tools__item">
+                            <a href="ebookstopdf.html" title="ebooks_to_pdf">
+                                <Link to={"ebookstopdf"} onClick={(e) => handleClick(e, 'ebookstopdf')}> <img src="assets/images/icons/ebooks to pdf.png" />
+                                    <h3>Compress PDF</h3>
                                     {/* <p>
                                     Convert various eBooks <br /> files like MOBI and <br /> EPUB to PDF
                                 </p> */}
-                                    <div className="inactive-overlay"></div>
+                                    <div className="tools__item__content"></div>
 
                                 </Link>
                                 {loading && (
@@ -236,6 +236,7 @@ function Index() {
 
                             </a>
                         </div>
+
                         <div className="tools__item inactive-overlay">
                             <a title="iwork_to_pdf">
                                 <Link> <img src="assets/images/icons/iwork to pdf.png" />
