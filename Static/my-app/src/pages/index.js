@@ -195,22 +195,24 @@ function Index() {
                             </a>
                         </div> */}
 
-                        
 
-                        <div className="tools__item inactive-overlay">
-                            <a title="openoffice_to_pdf">
-                                <Link>
-                                    <div className="inactive-overlay"></div> {/* Transparent block */}
-                                    <img src="assets/images/icons/openoffice to pdf.png" alt="OpenOffice to PDF" />
-                                    <h3>OpenOffice to PDF</h3>
+<div className="tools__item">
+                            <a href="openofficetopdf.html" title="openoffice_to_pdf">
+                                <Link to={"openofficetopdf"} onClick={(e) => handleClick(e, 'openofficetopdf')}> <img src="assets/images/icons/openoffice to pdf.png" />
+                                    <h3>HTML to PDF</h3>
+                                    {/* <p>
+                                    Convert OpenOffice Writer, Calc, Impress, Draw and Math files to PDF
+                                    online <br /> and free
+                                </p> */}
+                                    <div className="tools__item__content"></div>
                                 </Link>
-                                {/* {loading && (
+                                {loading && (
                                     <div className="loader-overlay">
                                         <div className="loader">
                                             <BeatLoader color="#000" css={loaderOverride} loading={loading} />
                                         </div>
                                     </div>
-                                )} */}
+                                )}
 
                             </a>
                         </div>
