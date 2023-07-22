@@ -16,7 +16,7 @@ function PowerPointToWord() {
         convertToWord(file);
       } else {
         event.target.value = null; // Reset file input
-        //alert('Please select a PowerPoint document (.ppt or .pptx file).');
+        alert('Please select a PowerPoint document (.ppt or .pptx file).');
         setShowModal(true);
 
       }

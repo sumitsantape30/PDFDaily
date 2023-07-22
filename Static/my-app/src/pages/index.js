@@ -157,15 +157,15 @@ function Index() {
                                 )}
                             </a>
                         </div>
-
-                        <div className="tools__item inactive-overlay">
-                            <a title="excel_to_pdf">
-                                <Link>  <img src="assets/images/icons/excel to pdf.png" alt="Excel to PDF" />
-                                    <h3>Excel to PDF</h3>
-                                    {/* <p>Make excel sheets easy to read by converting them into PDF</p> */}
-                                    <div className="tools__item__content inactive-overlay"></div>
+                        <div className="tools__item">
+                            <a  title="merge_pdf">
+                                <Link to={"ppttoword"} onClick={(e) => handleClick(e, 'ppttoword')}>  <img src="assets/images/icons/merge pdf.png" alt="merge pdf" />
+                                    <h3>PPT to Word</h3>
+                                    {/* <p>Merge multiple PDFs into <br /> a single PDF</p> */}
+                                    <div className="tools__item__content"></div>
 
                                 </Link>
+
                                 {loading && (
                                     <div className="loader-overlay">
                                         <div className="loader">
@@ -173,9 +173,11 @@ function Index() {
                                         </div>
                                     </div>
                                 )}
+
                             </a>
                         </div>
-                        
+                       
+                       
                         
                         {/* <div className="tools__item inactive-overlay">
                             <a title="powerpoint_to_word">
@@ -290,6 +292,44 @@ function Index() {
                                     </div>
                                 )}
 
+                            </a>
+                        </div>
+                        
+                        <div className="tools__item inactive-overlay">
+                            <a title="pdf_to_powerpoint">
+                                <Link > <img src="assets/images/icons/pdf to powerpoint.png" />
+                                    <h3>PDF to Powerpoint</h3>
+                                    {/* <p>Make PPTs from PDFs in <br /> the easiest way</p> */}
+                                    <div className="tools__item__content inactive-overlay"></div>
+
+                                </Link>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
+
+                            </a>
+                        </div>
+                        
+
+                        <div className="tools__item inactive-overlay">
+                            <a title="excel_to_pdf">
+                                <Link>  <img src="assets/images/icons/excel to pdf.png" alt="Excel to PDF" />
+                                    <h3>Excel to PDF</h3>
+                                    {/* <p>Make excel sheets easy to read by converting them into PDF</p> */}
+                                    <div className="tools__item__content inactive-overlay"></div>
+
+                                </Link>
+                                {loading && (
+                                    <div className="loader-overlay">
+                                        <div className="loader">
+                                            <BeatLoader color="#000" css={loaderOverride} loading={loading} />
+                                        </div>
+                                    </div>
+                                )}
                             </a>
                         </div>
                         

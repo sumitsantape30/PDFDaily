@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../assets/css/openofficetopdf.css";
 
 //HTML to PDF
 
-function Openofficetopdf() {
+function Htmltopdf() {
   const [selectedFileName, setSelectedFileName] = useState("");
+  const [isFileSelected, setIsFileSelected] = useState(false);
   const [convertedData, setConvertedData] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
@@ -13,13 +14,17 @@ function Openofficetopdf() {
     if (file) {
       const extension = file.name.split('.').pop().toLowerCase();
       if (extension === 'html') {
+        const formData = new FormData();
+        formData.append('file', file);
+        setIsFileSelected(true);
         setSelectedFileName(file.name);
-        convertToPdf(file);
+        convertToPdf(formData);
       } else {
         event.target.value = null; // Reset file input
         setShowModal(true);
       }
     } else {
+      setIsFileSelected(false);
       setSelectedFileName('');
     }
   };
@@ -35,9 +40,25 @@ function Openofficetopdf() {
     }
   };
 
-  const convertToPdf = async (file) => {
+  const convertToPdf = async(formData) => {
+    // const formData = new FormData();
+    // formData.append('html_file',html_file);
+    try {
+      const response = await fetch('http://127.0.0.1:8000/html2pdf/html-to-pdf/', {
+        method: 'POST',
+        body: formData,
+      });
+    // const convertedData = /* Perform the conversion */
+    // setConvertedData(convertedData);
+    const data = await response.blob();
+    setConvertedData(data);
 
-
+    // setTimeout(() => {
+    //   setShowDownloadButton(true);
+    // }, 3000);
+  } catch (error) {
+    console.error('Error:', error);
+  }
   };
 
   return (
@@ -167,14 +188,19 @@ function Openofficetopdf() {
                 </div>
               </div>
             )}
-            {convertedData && (
+            {convertedData ? (
               <center>
                 <div>
-                  <button className="button" onClick={handleDownload} style={{ maxWidth: '300px' }}>
+                  {/* <button className="button" onClick={handleDownload} style={{ maxWidth: '300px' }}> */}
+                  <a href={URL.createObjectURL(convertedData)} download="converted.pdf">
+                  <button className="button" style={{ maxWidth: '300px' }} onClick={handleDownload}>
                     Download PDF
                   </button>
+                  </a>
                 </div>
               </center>
+            ) : (
+            <div></div>
             )}
 
           </div>
@@ -183,5 +209,4 @@ function Openofficetopdf() {
     </html>
   );
 }
-
-export default Openofficetopdf;
+export default Htmltopdf;

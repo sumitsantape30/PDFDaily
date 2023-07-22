@@ -4,17 +4,20 @@ import "../assets/css/powerpointtopdf.css";
 function PowerpointToWord() {
   const [isFileSelected, setIsFileSelected] = useState(false);
   const [selectedFileName, setSelectedFileName] = useState("");
+  const [convertedData, setConvertedData] = useState(null);
   const [isConverted, setIsConverted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
+   const [showModal, setShowModal] = useState(false);
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       const extension = file.name.split(".").pop();
       if (extension.toLowerCase() === "ppt" || extension.toLowerCase() === "pptx") {
+        // const formData = new FormData();
+        // formData.append('file', file);
         setIsFileSelected(true);
         setSelectedFileName(file.name);
-        setIsConverted(false);
+        convertToWord(file);
       } else {
         event.target.value = null; // Reset file input
         alert("Please select a PowerPoint file.");
@@ -31,6 +34,34 @@ function PowerpointToWord() {
 
   const handleDownload = () => {
     // TODO: Handle file download logic
+    if (convertedData) {
+      const downloadLink = URL.createObjectURL(convertedData);
+      const a = document.createElement("a");
+      a.href = downloadLink;
+      a.download = "converted.pdf";
+      a.click();
+      URL.revokeObjectURL(downloadLink);
+    }
+  };
+
+  const convertToWord = async (file) => {
+    try {
+      // Create a new FormData and append the file
+      const formData = new FormData();
+      formData.append("file", file);
+
+      // Make a POST request to the conversion endpoint
+      const response = await fetch("http://127.0.0.1:8000/ppt2word/ppt-to-word/", {
+        method: "POST",
+        body: formData,
+      });
+
+      // Get the converted data
+      const data = await response.blob();
+      setConvertedData(data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const handleConvert = () => {
@@ -126,15 +157,31 @@ function PowerpointToWord() {
               </div>
             </center>
           )}
+          {showModal && (
+            <div className="modal">
+              <div className="modal-content">
+                <span className="close" onClick={() => setShowModal(false)}>
+                  &times;
+                </span>
+                <p>Please select a PNG file.</p>
+                <button onClick={() => setShowModal(false)}>Close</button>
+              </div>
+            </div>
+          )}
 
-          {isConverted && (
+          {convertedData ? (
             <center>
               <div>
-                <button className="button" onClick={handleDownload} style={{ maxWidth: '300px' }}>
+                {/* <button className="button" onClick={handleDownload} style={{ maxWidth: '300px' }}> */}
+                <a href={URL.createObjectURL(convertedData)} download="converted.docx">
+                  <button className="button" style={{ maxWidth: '300px' }} onClick={handleDownload}>
                   Download Word File
                 </button>
+                </a>
               </div>
             </center>
+            ) : (
+            <div></div>
           )}
         </div>
       </body>

@@ -11,8 +11,10 @@ function CompressPDF() {
     if (file) {
       const extension = file.name.split('.').pop().toLowerCase();
       if (extension === 'pdf') {
+        const formData = new FormData();
+        formData.append('file', file);
         setSelectedFileName(file.name);
-        compressPdf(file); // Call the compressPdf function when a PDF file is selected
+        compressPdf(formData); // Call the compressPdf function when a PDF file is selected
       } else {
         event.target.value = null; // Reset file input
         setShowModal(true);
@@ -33,15 +35,23 @@ function CompressPDF() {
     }
   };
 
-  const compressPdf = async (file) => {
+  const compressPdf = async (formData) => {
+    // const formData = new FormData();
+    // formData.append('pdf_file',pdf_file);
     try {
-      const fileContent = await file.arrayBuffer();
+      //const fileContent = await file.arrayBuffer();
       // Implement the PDF compression logic using a library or algorithm of your choice
       // For example, you can use a library like pdf-lib or pdf.js to compress the PDF.
       // Please note that the specific implementation will depend on the library you choose.
-
+      const response = await fetch('http://127.0.0.1:8000/compresspdf/compress_pdf/', {
+        method: 'POST',
+        body: formData,
+      });
+    // const convertedData = /* Perform the conversion */
+    // setConvertedData(convertedData);
+    const data = await response.blob();
       // Once the compression is done, set the compressed PDF data using setConvertedData:
-      setConvertedData(/* Compressed PDF data */);
+      setConvertedData(data);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -145,14 +155,14 @@ function CompressPDF() {
 
         <form>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <label htmlFor="html-file" className="button" style={{ maxWidth: '300px' }}>
+            <label htmlFor="pdf-file" className="button" style={{ maxWidth: '300px' }}>
               + Select an PDF File
               <input
                 type="file"
-                id="html-file"
+                id="pdf-file"
                 className="file-input"
                 onChange={handleFileChange}
-                accept=".html"
+                accept=".pdf"
                 style={{ display: 'none' }}
               />
             </label>
@@ -176,14 +186,21 @@ function CompressPDF() {
             </div>
           </div>
         )}
-        {convertedData && (
+        <h2 style={{ fontFamily: 'Helvetica, Sans-serif' }} className="center"></h2>
+        <br />
+        {convertedData ? (
           <center>
             <div>
-              <button className="button" onClick={handleDownload} style={{ maxWidth: '300px' }}>
+              {/* <button className="button" onClick={handleDownload} style={{ maxWidth: '300px' }}> */}
+              <a href={URL.createObjectURL(convertedData)} download="compress.pdf">
+              <button className="button" style={{ maxWidth: '300px' }} onClick={handleDownload}>
                 Download PDF
               </button>
+              </a>
             </div>
           </center>
+        ) : (
+          <div></div>
         )}
 
       </div>
